@@ -1,9 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "engine", "engine\engine.vcxproj", "{3C99D33C-E335-4E2A-953A-F362A6B4CD42}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sdl", "sdl\sdl.vcxproj", "{9446B9F1-A6D2-48BD-A035-73C5130E1840}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sdl", "sdl\sdl.vcxproj", "{1A496D45-69EC-4530-9234-E4D266532CA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +9,10 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3C99D33C-E335-4E2A-953A-F362A6B4CD42}.Debug|Win32.ActiveCfg = Debug|Win32
-		{3C99D33C-E335-4E2A-953A-F362A6B4CD42}.Debug|Win32.Build.0 = Debug|Win32
-		{3C99D33C-E335-4E2A-953A-F362A6B4CD42}.Release|Win32.ActiveCfg = Release|Win32
-		{3C99D33C-E335-4E2A-953A-F362A6B4CD42}.Release|Win32.Build.0 = Release|Win32
-		{9446B9F1-A6D2-48BD-A035-73C5130E1840}.Debug|Win32.ActiveCfg = Debug|Win32
-		{9446B9F1-A6D2-48BD-A035-73C5130E1840}.Debug|Win32.Build.0 = Debug|Win32
-		{9446B9F1-A6D2-48BD-A035-73C5130E1840}.Release|Win32.ActiveCfg = Release|Win32
-		{9446B9F1-A6D2-48BD-A035-73C5130E1840}.Release|Win32.Build.0 = Release|Win32
+		{1A496D45-69EC-4530-9234-E4D266532CA1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1A496D45-69EC-4530-9234-E4D266532CA1}.Debug|Win32.Build.0 = Debug|Win32
+		{1A496D45-69EC-4530-9234-E4D266532CA1}.Release|Win32.ActiveCfg = Release|Win32
+		{1A496D45-69EC-4530-9234-E4D266532CA1}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

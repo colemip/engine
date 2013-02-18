@@ -84,9 +84,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\CEvent.cpp" />
+    <ClCompile Include="src\CSurface.cpp" />
     <ClCompile Include="src\CApp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\CEvent.h" />
+    <ClInclude Include="src\CSurface.h" />
     <ClInclude Include="src\CApp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

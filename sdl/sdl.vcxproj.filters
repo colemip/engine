@@ -19,9 +19,21 @@
     <ClCompile Include="src\CApp.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\CSurface.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CEvent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\CApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CSurface.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CEvent.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

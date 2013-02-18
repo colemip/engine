@@ -12,6 +12,7 @@ int _tmain(int argc, _TCHAR** argv)
 /* Class definition */
 CApp::CApp() 
 {
+	Surf_Test = NULL;
 	Surf_Display = NULL;
  
     Running = true;
@@ -49,6 +50,10 @@ bool CApp::OnInit()
         return false;
     }
  
+    if((Surf_Test = CSurface::OnLoad("hello.bmp")) == NULL) {
+        return false;
+    }
+ 
     return true;
 }
 
@@ -65,9 +70,13 @@ void CApp::OnLoop()
 
 void CApp::OnRender() 
 {
+	CSurface::OnDraw(Surf_Display, Surf_Test, 0, 0);
+ 
+    SDL_Flip(Surf_Display);
 }
 
-void CApp::OnCleanup()
-{
-	SDL_Quit();
+void CApp::OnCleanup() {
+    SDL_FreeSurface(Surf_Test);
+    SDL_FreeSurface(Surf_Display);
+    SDL_Quit();
 }

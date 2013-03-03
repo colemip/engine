@@ -10,6 +10,15 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\input\Keyboard.cpp" />
+    <ClCompile Include="src\Engine.cpp" />
+    <ClCompile Include="src\Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\input\Keyboard.h" />
+    <ClInclude Include="src\Engine.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{ABC11B55-718C-455F-A2CB-BE704BBB80FF}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -80,8 +89,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

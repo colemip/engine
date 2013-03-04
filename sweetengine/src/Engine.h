@@ -9,6 +9,8 @@ namespace Sweet
 	{
 	private:
 		std::string version;
+		static Sweet::Engine *instance;
+
 	public:
 		Engine();
 		~Engine();
@@ -16,7 +18,8 @@ namespace Sweet
 		void Update();
 		void Render();
 		void Run();
-		
+		void CleanUp();
+		void Exit();
 
 	};
 }

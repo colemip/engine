@@ -16,6 +16,9 @@
     <Filter Include="src\event">
       <UniqueIdentifier>{891e786c-ba8b-4f69-b09a-593d8ad238db}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\lib">
+      <UniqueIdentifier>{54231edc-9059-48a4-ac5f-295201e69d87}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp">
@@ -33,6 +36,7 @@
     <ClCompile Include="src\input\Gamepad.cpp">
       <Filter>src\input</Filter>
     </ClCompile>
+    <ClCompile Include="Camera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine.h">
@@ -46,6 +50,10 @@
     </ClInclude>
     <ClInclude Include="src\input\Gamepad.h">
       <Filter>src\input</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Vector.h">
+      <Filter>src\lib</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

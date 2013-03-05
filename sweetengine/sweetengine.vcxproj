@@ -11,12 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\input\Gamepad.cpp" />
     <ClCompile Include="src\event\Event.cpp" />
     <ClCompile Include="src\input\Keyboard.cpp" />
     <ClCompile Include="src\Engine.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\input\Gamepad.h" />
     <ClInclude Include="src\event\Event.h" />
     <ClInclude Include="src\input\Keyboard.h" />
     <ClInclude Include="src\Engine.h" />

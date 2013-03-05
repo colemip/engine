@@ -15,12 +15,12 @@ namespace Sweet
 		Engine();
 		~Engine();
 		void Init();
-		void Update();
+		void Update(double dt);
 		void Render();
 		void Run();
 		void CleanUp();
 		void Exit();
-
+		void Message();
 	};
 }
 

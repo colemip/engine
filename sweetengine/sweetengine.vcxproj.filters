@@ -30,6 +30,9 @@
     <ClCompile Include="src\event\Event.cpp">
       <Filter>src\event</Filter>
     </ClCompile>
+    <ClCompile Include="src\input\Gamepad.cpp">
+      <Filter>src\input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine.h">
@@ -40,6 +43,9 @@
     </ClInclude>
     <ClInclude Include="src\event\Event.h">
       <Filter>src\event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\Gamepad.h">
+      <Filter>src\input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

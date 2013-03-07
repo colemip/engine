@@ -14,5 +14,5 @@ int main()
 	cout << "Exit? (y/n)";
 	cin >> input;
 
-	return 1;
+	return 0;
 }

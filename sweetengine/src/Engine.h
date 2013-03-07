@@ -21,6 +21,7 @@ namespace Sweet
 		void CleanUp();
 		void Exit();
 		void Message();
+		void OnEvent();
 	};
 }
 

@@ -33,9 +33,14 @@ bool Event::OnExit()
 	return false;
 }
 
-void Event::OnKeyPress()
+void Event::OnKeyDown()
 {
-	cout << "OnKeyPress Event" << endl;
+	cout << "OnKeyDown Event" << endl;
+}
+
+void Event::OnKeyUp()
+{
+	cout << "OnKeyUp Event" << endl;
 }
 
 void Event::OnMouseDown()
@@ -48,7 +53,12 @@ void Event::OnMouseUp()
 	cout << "OnMouseUp Event" << endl;
 }
 
-void Event::OnButtonPress()
+void Event::OnButtonDown()
 {
-	cout << "OnButtonPress Event" << endl;
+	cout << "OnButtonDown Event" << endl;
+}
+
+void Event::OnButtonUp()
+{
+	cout << "OnButtonUp Event" << endl;
 }

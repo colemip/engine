@@ -1,6 +1,13 @@
 #ifndef SWEET_EVENT_H
 #define SWEET_EVENT_H
 
+//#include <SDL.h>
+
+typedef enum _EventType 
+{
+	
+} EventType;
+
 namespace Sweet
 {
 	class Event
@@ -11,10 +18,12 @@ namespace Sweet
 		bool OnInit();
 		bool OnLoad();
 		bool OnExit();
-		void OnKeyPress();
+		void OnKeyDown();
+		void OnKeyUp();
 		void OnMouseDown();
 		void OnMouseUp();
-		void OnButtonPress();
+		void OnButtonDown();
+		void OnButtonUp();
 	};
 }
 

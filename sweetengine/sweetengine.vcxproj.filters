@@ -19,6 +19,9 @@
     <Filter Include="src\lib">
       <UniqueIdentifier>{54231edc-9059-48a4-ac5f-295201e69d87}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\lib\math">
+      <UniqueIdentifier>{362849c2-e05a-4746-96f8-e3c5fa89dd95}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp">
@@ -36,7 +39,9 @@
     <ClCompile Include="src\input\Gamepad.cpp">
       <Filter>src\input</Filter>
     </ClCompile>
-    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="src\Camera.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine.h">
@@ -51,9 +56,11 @@
     <ClInclude Include="src\input\Gamepad.h">
       <Filter>src\input</Filter>
     </ClInclude>
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="Vector.h">
+    <ClInclude Include="src\lib\math\Vector.h">
       <Filter>src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Camera.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

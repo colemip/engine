@@ -30,9 +30,6 @@
     <ClCompile Include="src\Engine.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\input\Keyboard.cpp">
-      <Filter>src\input</Filter>
-    </ClCompile>
     <ClCompile Include="src\event\Event.cpp">
       <Filter>src\event</Filter>
     </ClCompile>
@@ -42,13 +39,13 @@
     <ClCompile Include="src\Camera.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\input\Keyboard.cpp">
+      <Filter>src\input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine.h">
       <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\input\Keyboard.h">
-      <Filter>src\input</Filter>
     </ClInclude>
     <ClInclude Include="src\event\Event.h">
       <Filter>src\event</Filter>
@@ -56,11 +53,14 @@
     <ClInclude Include="src\input\Gamepad.h">
       <Filter>src\input</Filter>
     </ClInclude>
-    <ClInclude Include="src\lib\math\Vector.h">
-      <Filter>src\lib</Filter>
-    </ClInclude>
     <ClInclude Include="src\Camera.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\Keyboard.h">
+      <Filter>src\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\math\Vector.h">
+      <Filter>src\lib\math</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

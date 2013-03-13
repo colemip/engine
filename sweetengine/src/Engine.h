@@ -2,6 +2,9 @@
 #define SWEET_ENGINE_H
 
 #include <string>
+#include <SDL.h>
+#include "input\Keyboard.h"
+#include "event\Event.h"
 
 namespace Sweet
 {
@@ -10,18 +13,22 @@ namespace Sweet
 	private:
 		std::string version;
 		static Sweet::Engine *instance;
+		bool running;
+		Sweet::Keyboard *keyboard;
 
 	public:
 		Engine();
 		~Engine();
 		void Init();
-		void Update(double dt);
+		int Update();
 		void Render();
 		void Run();
 		void CleanUp();
 		void Exit();
 		void Message();
-		void OnEvent();
+		void OnEvent(Sweet::Event *e);
+		void OnSDLEvent(SDL_Event *e);
+		int PollEvent(Sweet::Event *e);
 	};
 }
 

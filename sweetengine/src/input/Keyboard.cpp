@@ -10,10 +10,10 @@ Keyboard::~Keyboard()
 {
 }
 
-void OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
+void Keyboard::OnKeyDown(SDL_KeyboardEvent *kbe)
 {
 }
 
-void OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
+void Keyboard::OnKeyUp(SDL_KeyboardEvent *kbe)
 {
 }

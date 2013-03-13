@@ -15,6 +15,11 @@ Event::~Event()
 	cout << "Event Destructor" << endl;
 }
 
+EventType Event::getType()
+{
+	return this->type;
+}
+
 bool Event::OnInit()
 {
 	cout << "OnOnit Event" <<  endl;
@@ -33,9 +38,10 @@ bool Event::OnExit()
 	return false;
 }
 
-void Event::OnKeyDown()
+void Event::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
 {
 	cout << "OnKeyDown Event" << endl;
+	
 }
 
 void Event::OnKeyUp()

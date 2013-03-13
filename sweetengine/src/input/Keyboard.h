@@ -10,8 +10,10 @@ namespace Sweet
 	public:
 		Keyboard();
 		~Keyboard();
-		void OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode);
-		void OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode);
+		void OnKeyDown(SDL_KeyboardEvent *kbe);
+		void OnKeyUp(SDL_KeyboardEvent *kbe);
+		/*void OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode);
+		void OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode);*/
 	};
 }
 

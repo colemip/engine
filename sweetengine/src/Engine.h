@@ -4,7 +4,9 @@
 #include <string>
 #include <SDL.h>
 #include "input\Keyboard.h"
+#include "input\Mouse.h"
 #include "event\Event.h"
+
 
 namespace Sweet
 {
@@ -15,11 +17,13 @@ namespace Sweet
 		static Sweet::Engine *instance;
 		bool running;
 		Sweet::Keyboard *keyboard;
+		Sweet::Mouse *mouse_1;
 
 	public:
 		Engine();
 		~Engine();
 		void Init();
+		void StartUp();
 		int Update();
 		void Render();
 		void Run();

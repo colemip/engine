@@ -8,12 +8,13 @@ using namespace std;
 int _tmain(int argc, _TCHAR** argv) 
 {
 	Sweet::Engine *engine = new Sweet::Engine();
-	Sweet::Event *e = new Sweet::Event();
-	e->OnInit();
+	engine->Init();
+	//engine->Update();
+	engine->StartUp();
 
-	string input;
+	/*string input;
 	cout << "Exit? (y/n)";
-	cin >> input;
+	cin >> input;*/
 
 	return 0;
 }

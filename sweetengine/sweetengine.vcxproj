@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\input\Mouse.cpp" />
     <ClCompile Include="src\Camera.cpp" />
     <ClCompile Include="src\input\Gamepad.cpp" />
     <ClCompile Include="src\event\Event.cpp" />
@@ -19,6 +20,7 @@
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\input\Mouse.h" />
     <ClInclude Include="src\Camera.h" />
     <ClInclude Include="src\input\Keyboard.h" />
     <ClInclude Include="src\lib\math\Vector.h" />

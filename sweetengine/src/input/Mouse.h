@@ -12,6 +12,7 @@ namespace Sweet
 		~Mouse();
 		void Init();
 		void OnMouseMove(SDL_MouseMotionEvent *mme);
+		void OnMouseDown(SDL_MouseButtonEvent *mbe);
 	};
 }
 

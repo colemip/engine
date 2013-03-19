@@ -42,7 +42,9 @@
     <ClCompile Include="src\input\Keyboard.cpp">
       <Filter>src\input</Filter>
     </ClCompile>
-    <ClCompile Include="src\input\Mouse.cpp" />
+    <ClCompile Include="src\input\Mouse.cpp">
+      <Filter>src\input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine.h">
@@ -63,6 +65,8 @@
     <ClInclude Include="src\lib\math\Vector.h">
       <Filter>src\lib\math</Filter>
     </ClInclude>
-    <ClInclude Include="src\input\Mouse.h" />
+    <ClInclude Include="src\input\Mouse.h">
+      <Filter>src\input</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

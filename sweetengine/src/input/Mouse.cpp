@@ -21,3 +21,27 @@ void Mouse::OnMouseMove(SDL_MouseMotionEvent *mme)
 {
 	std::cout << "Mouse at (" <<  mme->x << ", " << mme->y << ")" << std::endl;
 }
+
+void Mouse::OnMouseDown(SDL_MouseButtonEvent *mbe)
+{
+	//std::cout << "Mouse Button '" << mbe->button << "' at (" <<  mbe->x << ", " << mbe->y << ")" << std::endl;
+
+	switch(mbe->button)
+	{
+		case SDL_BUTTON_LEFT:
+			std::cout << "Left Mouse down at (" << mbe->x << ", "  << mbe->y << ")" << std::endl;
+			break;
+		case SDL_BUTTON_MIDDLE:
+			std::cout << "Middle Mouse down at (" << mbe->x << ", "  << mbe->y << ")" << std::endl;
+			break;
+		case SDL_BUTTON_RIGHT:
+			std::cout << "Right Mouse down at (" << mbe->x << ", "  << mbe->y << ")" << std::endl;
+			break;
+		case SDL_BUTTON_WHEELUP:
+			std::cout << "Mouse Wheel Up down at (" << mbe->x << ", "  << mbe->y << ")" << std::endl;
+			break;
+		case SDL_BUTTON_WHEELDOWN:
+			std::cout << "Mouse Wheel Down down at (" << mbe->x << ", "  << mbe->y << ")" << std::endl;
+			break;
+	}
+}

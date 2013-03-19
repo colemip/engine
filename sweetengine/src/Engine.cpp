@@ -88,6 +88,9 @@ void Engine::OnSDLEvent(SDL_Event *e)
 		case SDL_MOUSEMOTION:
 			this->mouse_1->OnMouseMove(&e->motion);
 			break;
+		case SDL_MOUSEBUTTONDOWN:
+			this->mouse_1->OnMouseDown(&e->button);
+			break;
 		default: 
 			break;
 	}

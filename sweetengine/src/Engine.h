@@ -5,6 +5,7 @@
 #include <SDL.h>
 #include "input\Keyboard.h"
 #include "input\Mouse.h"
+#include "input\Gamepad.h"
 #include "event\Event.h"
 
 
@@ -18,6 +19,7 @@ namespace Sweet
 		bool running;
 		Sweet::Keyboard *keyboard;
 		Sweet::Mouse *mouse_1;
+		Sweet::Gamepad *gamepad_1;
 
 	public:
 		Engine();

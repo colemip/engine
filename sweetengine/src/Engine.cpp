@@ -8,6 +8,7 @@ Engine::Engine()
 	std::cout << "Constructing Engine" << std::endl;
 	this->keyboard = new Sweet::Keyboard();
 	this->mouse_1 = new Sweet::Mouse();
+	
 }
 
 
@@ -18,9 +19,15 @@ Engine::~Engine()
 void Engine::Init()
 {
 	this->running = true;
-	SDL_Init( SDL_INIT_VIDEO );
+	SDL_Init( SDL_INIT_VIDEO | SDL_INIT_JOYSTICK );
 	SDL_SetVideoMode( 320, 200, 0, 0 );
-	SDL_EnableUNICODE( 1 );
+	SDL_EnableUNICODE( 1 );	
+
+	/* Enable joysticks */
+	SDL_JoystickEventState(SDL_ENABLE);
+	this->gamepad_1 = new Sweet::Gamepad();
+	/*SDL_Joystick *joystick;
+	joystick = SDL_JoystickOpen(0);*/
 }
 
 int Engine::Update()
@@ -30,6 +37,11 @@ int Engine::Update()
 
 void Engine::StartUp()
 {
+	/* Startup messages */
+	for(int i=0; i<SDL_NumJoysticks(); i++)
+		std::cout << "Joystick '" << SDL_JoystickName(i) << "' Detected" << std::endl;
+
+
 	Sweet::Event event;
 
 	while(this->running)
@@ -90,6 +102,12 @@ void Engine::OnSDLEvent(SDL_Event *e)
 			break;
 		case SDL_MOUSEBUTTONDOWN:
 			this->mouse_1->OnMouseDown(&e->button);
+			break;
+		case SDL_JOYBUTTONDOWN:
+			this->gamepad_1->OnButtonDown(&e->jbutton);
+			break;
+		case SDL_JOYBUTTONUP:
+			this->gamepad_1->OnButtonUp(&e->jbutton);
 			break;
 		default: 
 			break;

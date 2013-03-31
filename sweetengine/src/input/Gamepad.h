@@ -20,6 +20,7 @@ namespace Sweet
 		~Gamepad();
 		void OnButtonDown(SDL_JoyButtonEvent *jbe);
 		void OnButtonUp(SDL_JoyButtonEvent *jbe);
+		void OnJoyAxisMotion(SDL_JoyAxisEvent *jae);
 	};
 }
 

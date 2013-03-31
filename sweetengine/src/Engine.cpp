@@ -102,6 +102,9 @@ void Engine::OnSDLEvent(SDL_Event *e)
 		case SDL_JOYBUTTONUP:
 			this->gamepad_1->OnButtonUp(&e->jbutton);
 			break;
+		case SDL_JOYAXISMOTION:
+			this->gamepad_1->OnJoyAxisMotion(&e->jaxis);
+			break;
 		case SDL_QUIT:
 			this->running = false;
 			break;

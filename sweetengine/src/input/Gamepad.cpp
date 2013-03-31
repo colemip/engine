@@ -38,3 +38,18 @@ void Gamepad::OnButtonUp(SDL_JoyButtonEvent *jbe)
 		std::cout << "Gamepad Button Up" << std::endl;
 
 }
+
+void Gamepad::OnJoyAxisMotion(SDL_JoyAxisEvent *jae)
+{
+	/* Left, right axis movement */
+	if(jae->axis == 0)
+	{
+		std::cout << "Joystick value: " << jae->value << std::endl;
+	}
+
+	/* Up, down axis movement */
+	if(jae->axis == 1)
+	{
+		std::cout << "Joystick value: " << jae->value << std::endl;
+	}
+}

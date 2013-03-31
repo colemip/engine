@@ -3,6 +3,11 @@
 
 #include <SDL.h>
 
+typedef enum _GamepadModel
+{
+	XBOX360_WIRED = (1 << 0)
+} GamepadModel;
+
 namespace Sweet
 {
 	class Gamepad

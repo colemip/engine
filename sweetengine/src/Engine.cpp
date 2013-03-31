@@ -26,8 +26,6 @@ void Engine::Init()
 	/* Enable joysticks */
 	SDL_JoystickEventState(SDL_ENABLE);
 	this->gamepad_1 = new Sweet::Gamepad();
-	/*SDL_Joystick *joystick;
-	joystick = SDL_JoystickOpen(0);*/
 }
 
 int Engine::Update()
@@ -51,10 +49,8 @@ void Engine::StartUp()
 		// listen for input
 		while(PollEvent(&event))
 		{
-			//OnEvent(&event);
+			
 		}
-
-		//this->running = false;
 	}
 
 	CleanUp();
@@ -85,7 +81,7 @@ void Engine::OnEvent(Sweet::Event *e)
 }
 
 void Engine::OnSDLEvent(SDL_Event *e)
-{
+{	
 	switch(e->type)
 	{
 		case SDL_KEYUP:
@@ -93,9 +89,6 @@ void Engine::OnSDLEvent(SDL_Event *e)
 			break;
 		case SDL_KEYDOWN:
 			this->keyboard->OnKeyUp(&e->key);
-			break;
-		case SDL_QUIT:
-			this->running = false;
 			break;
 		case SDL_MOUSEMOTION:
 			this->mouse_1->OnMouseMove(&e->motion);
@@ -108,6 +101,9 @@ void Engine::OnSDLEvent(SDL_Event *e)
 			break;
 		case SDL_JOYBUTTONUP:
 			this->gamepad_1->OnButtonUp(&e->jbutton);
+			break;
+		case SDL_QUIT:
+			this->running = false;
 			break;
 		default: 
 			break;

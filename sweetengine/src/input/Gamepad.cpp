@@ -41,15 +41,25 @@ void Gamepad::OnButtonUp(SDL_JoyButtonEvent *jbe)
 
 void Gamepad::OnJoyAxisMotion(SDL_JoyAxisEvent *jae)
 {
-	/* Left, right axis movement */
-	if(jae->axis == 0)
-	{
-		std::cout << "Joystick value: " << jae->value << std::endl;
-	}
 
-	/* Up, down axis movement */
-	if(jae->axis == 1)
+	
+	int numAxes = SDL_JoystickNumAxes(this->joystick);
+	int value;
+
+	for(int i=0; i<numAxes; i++)
 	{
-		std::cout << "Joystick value: " << jae->value << std::endl;
-	}
+		value = SDL_JoystickGetAxis(this->joystick, i);
+		std::cout << "Axis " << i << " value: " << value << std::endl;
+	}	
+	/* Left, right axis movement */
+	//if(jae->axis == 0)
+	//{
+	//	std::cout << "Joystick value: " << jae->value << std::endl;
+	//}
+
+	///* Up, down axis movement */
+	//if(jae->axis == 1)
+	//{
+	//	std::cout << "Joystick value: " << jae->value << std::endl;
+	//}
 }

@@ -40,16 +40,26 @@ void Gamepad::OnButtonUp(SDL_JoyButtonEvent *jbe)
 }
 
 void Gamepad::OnJoyAxisMotion(SDL_JoyAxisEvent *jae)
-{
-
-	
+{	
 	int numAxes = SDL_JoystickNumAxes(this->joystick);
-	int value;
 
 	for(int i=0; i<numAxes; i++)
 	{
-		value = SDL_JoystickGetAxis(this->joystick, i);
-		std::cout << "Axis " << i << " value: " << value << std::endl;
+		switch(i)
+		{
+		case GamepadAxis::LEFT_STICK_LR:
+			std::cout << "Axis " << i << " value: " << GetAxisValue(LEFT_STICK_LR) << std::endl;
+			break;
+		case GamepadAxis::LEFT_STICK_UD:
+			std::cout << "Axis " << i << " value: " << GetAxisValue(LEFT_STICK_UD) << std::endl;
+			break;
+		case GamepadAxis::RIGHT_STICK_LR:
+			std::cout << "Axis " << i << " value: " << GetAxisValue(RIGHT_STICK_LR) << std::endl;
+			break;
+		case GamepadAxis::RIGHT_STICK_UD:
+			std::cout << "Axis " << i << " value: " << GetAxisValue(RIGHT_STICK_UD) << std::endl;
+			break;
+		}
 	}	
 	/* Left, right axis movement */
 	//if(jae->axis == 0)
@@ -62,4 +72,9 @@ void Gamepad::OnJoyAxisMotion(SDL_JoyAxisEvent *jae)
 	//{
 	//	std::cout << "Joystick value: " << jae->value << std::endl;
 	//}
+}
+
+int Gamepad::GetAxisValue(Sweet::GamepadAxis axis)
+{
+	return SDL_JoystickGetAxis(this->joystick, axis);
 }

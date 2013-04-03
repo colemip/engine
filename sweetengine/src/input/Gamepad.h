@@ -3,13 +3,23 @@
 
 #include <SDL.h>
 
-typedef enum _GamepadModel
-{
-	XBOX360_WIRED = (1 << 0)
-} GamepadModel;
-
 namespace Sweet
 {
+	typedef enum _GamepadModel
+	{
+		XBOX360_WIRED = (1 << 0)
+	} GamepadModel;
+
+	typedef enum _GamepadAxis
+	{
+		LEFT_STICK_LR = 0,
+		LEFT_STICK_UD = 1,
+		RIGHT_STICK_LR = 2,
+		RIGHT_STICK_UD = 3,
+		/*LEFT_TRIGGER = 2,
+		RIGHT_TRIGGER = 3*/
+	} GamepadAxis;
+
 	class Gamepad
 	{
 	private:
@@ -21,6 +31,8 @@ namespace Sweet
 		void OnButtonDown(SDL_JoyButtonEvent *jbe);
 		void OnButtonUp(SDL_JoyButtonEvent *jbe);
 		void OnJoyAxisMotion(SDL_JoyAxisEvent *jae);
+	private:
+		int GetAxisValue(Sweet::GamepadAxis axis);
 	};
 }
 

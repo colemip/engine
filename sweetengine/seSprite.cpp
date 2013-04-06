@@ -15,12 +15,12 @@ void seSprite::DrawBoundingBox()
 {
 }
 
-void seSprite::move()
+void seSprite::Move()
 {
-
+	// update collider here
 }
 
-void seSprite::setColliderPosition(sePoint *_position)
+void seSprite::SetColliderPosition(sePoint *_position)
 {
-	this->collider->setPosition(_position);
+	this->collider->SetPosition(_position);
 }

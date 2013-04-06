@@ -16,7 +16,7 @@ namespace Sweet
 		CollisionEntity();
 		CollisionEntity(sePoint *_position, float _width, float _height);
 		~CollisionEntity();
-		void setPosition(sePoint *_position);
+		void SetPosition(sePoint *_position);
 	};
 }
 

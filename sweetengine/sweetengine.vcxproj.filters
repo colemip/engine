@@ -45,6 +45,8 @@
     <ClCompile Include="src\input\Mouse.cpp">
       <Filter>src\input</Filter>
     </ClCompile>
+    <ClCompile Include="seSprite.cpp" />
+    <ClCompile Include="sePoint.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine.h">
@@ -68,5 +70,7 @@
     <ClInclude Include="src\input\Mouse.h">
       <Filter>src\input</Filter>
     </ClInclude>
+    <ClInclude Include="seSprite.h" />
+    <ClInclude Include="sePoint.h" />
   </ItemGroup>
 </Project>

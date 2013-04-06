@@ -11,6 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="sePoint.cpp" />
+    <ClCompile Include="seSprite.cpp" />
     <ClCompile Include="src\input\Mouse.cpp" />
     <ClCompile Include="src\Camera.cpp" />
     <ClCompile Include="src\input\Gamepad.cpp" />
@@ -20,6 +22,8 @@
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="sePoint.h" />
+    <ClInclude Include="seSprite.h" />
     <ClInclude Include="src\input\Mouse.h" />
     <ClInclude Include="src\Camera.h" />
     <ClInclude Include="src\input\Keyboard.h" />

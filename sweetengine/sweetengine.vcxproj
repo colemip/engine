@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CollisionEntity.cpp" />
     <ClCompile Include="sePoint.cpp" />
     <ClCompile Include="seSprite.cpp" />
     <ClCompile Include="src\input\Mouse.cpp" />
@@ -22,6 +23,7 @@
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CollisionEntity.h" />
     <ClInclude Include="sePoint.h" />
     <ClInclude Include="seSprite.h" />
     <ClInclude Include="src\input\Mouse.h" />

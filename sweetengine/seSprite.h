@@ -1,4 +1,5 @@
-#pragma once
+#ifndef SWEET_SESPRITE_H
+#define SWEET_SESPRITE_H
 
 namespace Sweet
 {
@@ -13,3 +14,4 @@ namespace Sweet
 	};
 }
 
+#endif

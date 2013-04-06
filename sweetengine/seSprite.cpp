@@ -2,11 +2,15 @@
 
 using namespace Sweet;
 
-seSprite::seSprite(void)
+seSprite::seSprite()
 {
 }
 
 
-seSprite::~seSprite(void)
+seSprite::~seSprite()
+{
+}
+
+void seSprite::DrawBoundingBox()
 {
 }

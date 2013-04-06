@@ -16,3 +16,8 @@ CollisionEntity::CollisionEntity(sePoint *_position, float _width, float _height
 CollisionEntity::~CollisionEntity()
 {
 }
+
+void CollisionEntity::setPosition(sePoint *_position)
+{
+	this->position = _position;
+}

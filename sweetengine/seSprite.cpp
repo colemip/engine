@@ -14,3 +14,13 @@ seSprite::~seSprite()
 void seSprite::DrawBoundingBox()
 {
 }
+
+void seSprite::move()
+{
+
+}
+
+void seSprite::setColliderPosition(sePoint *_position)
+{
+	this->collider->setPosition(_position);
+}

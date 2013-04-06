@@ -16,7 +16,8 @@ namespace Sweet
 		seSprite();
 		~seSprite();
 		void DrawBoundingBox(); 
-		virtual void move() = 0;
+		virtual void move();
+		void setColliderPosition(sePoint *_position);
 	};
 }
 

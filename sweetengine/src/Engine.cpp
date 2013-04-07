@@ -20,7 +20,8 @@ void Engine::Init()
 {
 	this->running = true;
 	SDL_Init( SDL_INIT_VIDEO | SDL_INIT_JOYSTICK );
-	SDL_SetVideoMode( 320, 200, 0, 0 );
+	SDL_SetVideoMode( 640, 480, 32, SDL_HWSURFACE | SDL_GL_DOUBLEBUFFER | SDL_OPENGL);
+	InitOpenGL();
 	SDL_EnableUNICODE( 1 );	
 
 	/* Enable joysticks */
@@ -47,10 +48,7 @@ void Engine::StartUp()
 		// do engine things
 
 		// listen for input
-		while(PollEvent(&event))
-		{
-			
-		}
+		while(PollEvent(&event));
 	}
 
 	CleanUp();
@@ -111,4 +109,17 @@ void Engine::OnSDLEvent(SDL_Event *e)
 		default: 
 			break;
 	}
+}
+
+void Engine::InitOpenGL()
+{
+	glClearColor(0,0,0,0);
+	glClearDepth(1.0f);
+	glViewport(0, 0, 640, 480);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glOrtho(0, 640, 480, 0, 1, -1);
+	glMatrixMode(GL_MODELVIEW);
+	glEnable(GL_TEXTURE_2D);
+	glLoadIdentity();
 }

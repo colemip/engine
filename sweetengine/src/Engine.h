@@ -3,6 +3,7 @@
 
 #include <string>
 #include <SDL.h>
+#include <glut.h>
 #include "input\Keyboard.h"
 #include "input\Mouse.h"
 #include "input\Gamepad.h"
@@ -35,6 +36,7 @@ namespace Sweet
 		void OnEvent(Sweet::Event *e);
 		void OnSDLEvent(SDL_Event *e);
 		int PollEvent(Sweet::Event *e);
+		void InitOpenGL();
 	};
 }
 

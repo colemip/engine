@@ -48,6 +48,7 @@
     <ClCompile Include="seSprite.cpp" />
     <ClCompile Include="sePoint.cpp" />
     <ClCompile Include="CollisionEntity.cpp" />
+    <ClCompile Include="GLWorkbench.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine.h">
@@ -74,5 +75,6 @@
     <ClInclude Include="seSprite.h" />
     <ClInclude Include="sePoint.h" />
     <ClInclude Include="CollisionEntity.h" />
+    <ClInclude Include="GLWorkbench.h" />
   </ItemGroup>
 </Project>

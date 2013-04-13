@@ -6,11 +6,9 @@ Collider::Collider()
 {
 }
 
-Collider::Collider(sePoint *_position, float _width, float _height)
+Collider::Collider(sePoint *_position)
 {
-	this->position = _position;
-	this->width = _width;
-	this->height = _height;
+	this->position = _position;	
 }
 
 Collider::~Collider()

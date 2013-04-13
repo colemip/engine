@@ -5,7 +5,12 @@ using namespace Sweet;
 RectCollider::RectCollider()
 {
 }
-
+RectCollider::RectCollider(sePoint *_position, float _width, float _height)
+{
+	this->position = _position;
+	this->width = _width;
+	this->height = _height;
+}
 
 RectCollider::~RectCollider()
 {

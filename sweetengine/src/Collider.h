@@ -7,14 +7,12 @@ namespace Sweet
 {
 	class Collider
 	{
-	private:
-		sePoint *position;
-		float width;
-		float height;
+	protected:
+		sePoint *position;		
 
 	public:
 		Collider();
-		Collider(sePoint *_position, float _width, float _height);
+		Collider(sePoint *_position);
 		~Collider();
 		void SetPosition(sePoint *_position);
 	};

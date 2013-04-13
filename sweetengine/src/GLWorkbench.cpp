@@ -16,13 +16,13 @@ GLWorkbench::~GLWorkbench()
 {
 }
 
-void GLWorkbench::init()
+void GLWorkbench::Init()
 {
 	glClearColor (0.0, 0.0, 0.0, 0.0);
 	glShadeModel(GL_FLAT);
 	glEnable(GL_DEPTH_TEST);
 
-	makeCheckImage();
+	MakeCheckImage();
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
 	glGenTextures(1, &texName);
@@ -39,7 +39,7 @@ void GLWorkbench::init()
 					checkImage);
 }
 
-int GLWorkbench::run(int argc, char **argv)
+int GLWorkbench::Run(int argc, char **argv)
 {
 	//char *argvAsMultibyte = (char *)malloc(sizeof argv);
 	//wcstombs(argvAsMultibyte, argv, 
@@ -48,14 +48,14 @@ int GLWorkbench::run(int argc, char **argv)
 	glutInitWindowSize(250, 250);
 	glutInitWindowPosition(100, 100);
 	glutCreateWindow(argv[0]);
-	init();
-	glutDisplayFunc(GLWorkbench::display);
-	glutReshapeFunc(GLWorkbench::reshape);	
+	Init();
+	glutDisplayFunc(GLWorkbench::Display);
+	glutReshapeFunc(GLWorkbench::Reshape);	
 	glutMainLoop();
 	return 0; 
 }
 
-void GLWorkbench::makeCheckImage()
+void GLWorkbench::MakeCheckImage()
 {
 	int i, j, c;
     
@@ -70,7 +70,7 @@ void GLWorkbench::makeCheckImage()
 	}
 }
 
-void GLWorkbench::display()
+void GLWorkbench::Display()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_TEXTURE_2D);
@@ -92,7 +92,7 @@ void GLWorkbench::display()
 }
 
 
-void GLWorkbench::reshape(int w, int h)
+void GLWorkbench::Reshape(int w, int h)
 {
 	glViewport(0, 0, (GLsizei) w, (GLsizei) h);
 	glMatrixMode(GL_PROJECTION);
@@ -103,7 +103,7 @@ void GLWorkbench::reshape(int w, int h)
 	glTranslatef(0.0, 0.0, -3.6);
 }
 
-void GLWorkbench::keyboard (unsigned char key, int x, int y)
+void GLWorkbench::Keyboard (unsigned char key, int x, int y)
 {
    switch (key) {
       case 27:

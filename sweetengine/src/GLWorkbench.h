@@ -22,12 +22,12 @@ namespace Sweet
 	public:
 		GLWorkbench();
 		~GLWorkbench();
-		void init();
-		int run(int argc, char **argv);
-		void makeCheckImage();
-		static void display();
-		static void reshape(int w, int h);
-		void keyboard (unsigned char key, int x, int y);
+		void Init();
+		int Run(int argc, char **argv);
+		void MakeCheckImage();
+		static void Display();
+		static void Reshape(int w, int h);
+		void Keyboard (unsigned char key, int x, int y);
 	};
 }
 

@@ -40,10 +40,10 @@ namespace Sweet
 		int PollEvent(Sweet::Event *e);
 		/* OpenGL */
 		void InitOpenGL();		
-		int StartOpenGL();
-		static void display();		
-		static void reshape(int w, int h);
-		void runGLWorkbench(int argc, char **argv);
+		//int StartOpenGL();
+		/*static void Display();		
+		static void Reshape(int w, int h);*/
+		void RunGLWorkbench(int argc, char **argv);
 	};
 }
 

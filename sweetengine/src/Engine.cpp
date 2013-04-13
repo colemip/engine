@@ -128,9 +128,9 @@ void Engine::InitOpenGL()
 	glLoadIdentity();	 
 }
 
-void Engine::runGLWorkbench(int argc, char **argv)
+void Engine::RunGLWorkbench(int argc, char **argv)
 {
-	this->glWorkbench->run(argc, argv);
+	this->glWorkbench->Run(argc, argv);
 }
 
 //int Engine::StartOpenGL()

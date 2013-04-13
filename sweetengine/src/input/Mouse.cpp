@@ -62,12 +62,6 @@ void Mouse::OnMouseUp(SDL_MouseButtonEvent *mbe)
 			case SDL_BUTTON_RIGHT:
 				std::cout << "Right Mouse up at (" << mbe->x << ", "  << mbe->y << ")" << std::endl;
 				break;
-			case SDL_BUTTON_WHEELUP:
-				std::cout << "Mouse Wheel Up up at (" << mbe->x << ", "  << mbe->y << ")" << std::endl;
-				break;
-			case SDL_BUTTON_WHEELDOWN:
-				std::cout << "Mouse Wheel Down up at (" << mbe->x << ", "  << mbe->y << ")" << std::endl;
-				break;
 		}
 	}
 }

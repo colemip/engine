@@ -6,7 +6,7 @@ sePoint::sePoint()
 {
 }
 
-sePoint::sePoint(float _x, float _y, float _z = 0)
+sePoint::sePoint(seFloat _x, seFloat _y, seFloat _z = 0)
 {
 	this->x = _x;
 	this->y = _y;
@@ -17,7 +17,7 @@ sePoint::~sePoint()
 {
 }
 
-float sePoint::DistanceToPoint(sePoint *otherPoint)
+seFloat sePoint::DistanceToPoint(sePoint *otherPoint)
 {
 	return 0.0;
 }

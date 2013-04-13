@@ -3,6 +3,7 @@
 
 #include "sePoint.h"
 #include "Collider.h"
+#include "Types.h"
 
 namespace Sweet
 {

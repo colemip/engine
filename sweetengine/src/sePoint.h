@@ -1,19 +1,21 @@
 #ifndef SWEET_SEPOINT_H
 #define SWEET_SEPOINT_H
 
+#include "Types.h"
+
 namespace Sweet
 {
 	class sePoint
 	{
 	private: 
-		float x;
-		float y;
-		float z;
+		seFloat x;
+		seFloat y;
+		seFloat z;
 	public:
 		sePoint();
-		sePoint(float _x, float _y, float _z);
+		sePoint(seFloat _x, seFloat _y, seFloat _z);
 		~sePoint();
-		float DistanceToPoint(sePoint *otherPoint);
+		seFloat DistanceToPoint(sePoint *otherPoint);
 	};
 }
 

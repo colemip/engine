@@ -1,3 +1,5 @@
+#include "../../Types.h"
+
 namespace Sweet
 {
 	class Vector2i
@@ -18,15 +20,15 @@ namespace Sweet
 	class Vector2f
 	{
 	private:
-		float x;
-		float y;
+		seFloat x;
+		seFloat y;
 	};
 
 	class Vector3f
 	{
 	private:
-		float x;
-		float y;
-		float z;
+		seFloat x;
+		seFloat y;
+		seFloat z;
 	};
 }

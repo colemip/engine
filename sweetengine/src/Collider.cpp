@@ -1,4 +1,4 @@
-#include "CollisionEntity.h"
+#include "Collider.h"
 
 using namespace Sweet;
 

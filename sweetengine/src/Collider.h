@@ -1,5 +1,5 @@
-#ifndef SWEET_COLLISIONENTITY_H
-#define SWEET_COLLISIONENTITY_H
+#ifndef SWEET_COLLIDER_H
+#define SWEET_COLLIDER_H
 
 #include "sePoint.h"
 

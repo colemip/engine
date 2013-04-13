@@ -5,7 +5,7 @@
 
 namespace Sweet
 {
-	class CollisionEntity
+	class Collider
 	{
 	private:
 		sePoint *position;
@@ -13,9 +13,9 @@ namespace Sweet
 		float height;
 
 	public:
-		CollisionEntity();
-		CollisionEntity(sePoint *_position, float _width, float _height);
-		~CollisionEntity();
+		Collider();
+		Collider(sePoint *_position, float _width, float _height);
+		~Collider();
 		void SetPosition(sePoint *_position);
 	};
 }

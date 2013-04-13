@@ -10,7 +10,7 @@ namespace Sweet
 	{
 	private:
 		sePoint *position;
-		CollisionEntity *collider;
+		Collider *collider;
 
 	public:
 		seSprite();

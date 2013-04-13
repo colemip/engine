@@ -2,7 +2,7 @@
 #define SWEET_SESPRITE_H
 
 #include "sePoint.h"
-#include "CollisionEntity.h"
+#include "Collider.h"
 
 namespace Sweet
 {

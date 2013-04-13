@@ -7,8 +7,7 @@ Engine::Engine()
 {
 	std::cout << "Constructing Engine" << std::endl;
 	this->keyboard = new Sweet::Keyboard();
-	this->mouse_1 = new Sweet::Mouse();
-	this->glWorkbench = new GLWorkbench();
+	this->mouse_1 = new Sweet::Mouse();	
 }
 
 

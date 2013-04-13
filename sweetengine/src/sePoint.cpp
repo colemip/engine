@@ -16,3 +16,7 @@ sePoint::sePoint(float _x, float _y, float _z = 0)
 sePoint::~sePoint()
 {
 }
+
+float sePoint::DistanceToPoint(sePoint *otherPoint)
+{
+}

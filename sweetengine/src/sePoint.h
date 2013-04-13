@@ -13,6 +13,7 @@ namespace Sweet
 		sePoint();
 		sePoint(float _x, float _y, float _z);
 		~sePoint();
+		float DistanceToPoint(sePoint *otherPoint);
 	};
 }
 

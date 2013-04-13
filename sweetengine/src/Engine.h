@@ -39,7 +39,7 @@ namespace Sweet
 		int PollEvent(Sweet::Event *e);
 		/* OpenGL */
 		void InitOpenGL();		
-		void RunGLWorkbench(int argc, char **argv);
+		//void RunGLWorkbench(int argc, char **argv);
 	};
 }
 

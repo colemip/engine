@@ -92,6 +92,9 @@ void Engine::OnSDLEvent(SDL_Event *e)
 		case SDL_MOUSEBUTTONDOWN:
 			this->mouse_1->OnMouseDown(&e->button);
 			break;
+		case SDL_MOUSEBUTTONUP:
+			this->mouse_1->OnMouseUp(&e->button);
+			break;
 		case SDL_JOYBUTTONDOWN:
 			this->gamepad_1->OnButtonDown(&e->jbutton);
 			break;
@@ -122,7 +125,7 @@ void Engine::InitOpenGL()
 	glLoadIdentity();	 
 }
 
-void Engine::RunGLWorkbench(int argc, char **argv)
-{
-	this->glWorkbench->Run(argc, argv);
-}
+//void Engine::RunGLWorkbench(int argc, char **argv)
+//{
+//	this->glWorkbench->Run(argc, argv);
+//}

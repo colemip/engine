@@ -93,4 +93,7 @@
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="sweetengine.licenseheader" />
+  </ItemGroup>
 </Project>

@@ -16,9 +16,6 @@ namespace Sweet
 
 	class GLWorkbench
 	{
-	/*public:
-		static GLubyte checkImage[checkImageHeight][checkImageWidth][4];
-		static GLuint texName;*/
 	public:
 		GLWorkbench();
 		~GLWorkbench();

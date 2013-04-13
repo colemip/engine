@@ -27,10 +27,6 @@ void Engine::Init()
 	/* Enable joysticks */
 	SDL_JoystickEventState(SDL_ENABLE);
 	this->gamepad_1 = new Sweet::Gamepad();
-
-
-	//this->glWorkbench->run();
-	//StartOpenGL();
 }
 
 int Engine::Update()
@@ -132,11 +128,3 @@ void Engine::RunGLWorkbench(int argc, char **argv)
 {
 	this->glWorkbench->Run(argc, argv);
 }
-
-//int Engine::StartOpenGL()
-//{
-//	glutDisplayFunc(GLWorkbench::display);
-//	glutReshapeFunc(GLWorkbench::reshape);	
-//	glutMainLoop();
-//	return 0;
-//}

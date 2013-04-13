@@ -2,11 +2,11 @@
 
 using namespace Sweet;
 
-RectCollider::RectCollider(void)
+RectCollider::RectCollider()
 {
 }
 
 
-RectCollider::~RectCollider(void)
+RectCollider::~RectCollider()
 {
 }

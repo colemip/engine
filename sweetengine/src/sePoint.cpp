@@ -19,4 +19,5 @@ sePoint::~sePoint()
 
 float sePoint::DistanceToPoint(sePoint *otherPoint)
 {
+	return 0.0;
 }

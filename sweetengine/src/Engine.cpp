@@ -20,8 +20,7 @@ void Engine::Init()
 {
 	this->running = true;
 	SDL_Init( SDL_INIT_VIDEO | SDL_INIT_JOYSTICK );
-	SDL_SetVideoMode( 640, 480, 32, SDL_HWSURFACE | SDL_GL_DOUBLEBUFFER | SDL_OPENGL);
-	InitOpenGL();
+	SDL_SetVideoMode( 640, 480, 32, 0);
 	SDL_EnableUNICODE( 1 );	
 
 	/* Enable joysticks */

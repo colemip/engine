@@ -45,10 +45,18 @@
     <ClCompile Include="src\input\Mouse.cpp">
       <Filter>src\input</Filter>
     </ClCompile>
-    <ClCompile Include="seSprite.cpp" />
-    <ClCompile Include="sePoint.cpp" />
-    <ClCompile Include="CollisionEntity.cpp" />
-    <ClCompile Include="GLWorkbench.cpp" />
+    <ClCompile Include="src\GLWorkbench.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CollisionEntity.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sePoint.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\seSprite.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine.h">
@@ -72,9 +80,17 @@
     <ClInclude Include="src\input\Mouse.h">
       <Filter>src\input</Filter>
     </ClInclude>
-    <ClInclude Include="seSprite.h" />
-    <ClInclude Include="sePoint.h" />
-    <ClInclude Include="CollisionEntity.h" />
-    <ClInclude Include="GLWorkbench.h" />
+    <ClInclude Include="src\GLWorkbench.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CollisionEntity.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sePoint.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\seSprite.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

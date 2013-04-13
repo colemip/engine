@@ -11,18 +11,22 @@
 
 namespace Sweet 
 {
+	static GLubyte checkImage[checkImageHeight][checkImageWidth][4];
+	static GLuint texName;
+
 	class GLWorkbench
 	{
-	private:
+	/*public:
 		static GLubyte checkImage[checkImageHeight][checkImageWidth][4];
-		static GLuint texName;
+		static GLuint texName;*/
 	public:
 		GLWorkbench();
 		~GLWorkbench();
-		void Init();
+		void init();
+		int run(int argc, char **argv);
 		void makeCheckImage();
-		void display();
-		void reshape(int w, int h);
+		static void display();
+		static void reshape(int w, int h);
 		void keyboard (unsigned char key, int x, int y);
 	};
 }

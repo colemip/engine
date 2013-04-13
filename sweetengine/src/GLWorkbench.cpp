@@ -2,6 +2,7 @@
 Examples taken from http://www.glprogramming.com/red/chapter09.html
 */
 
+#include <tchar.h>
 #include "GLWorkbench.h"
 
 using namespace Sweet;
@@ -15,7 +16,7 @@ GLWorkbench::~GLWorkbench()
 {
 }
 
-void GLWorkbench::Init()
+void GLWorkbench::init()
 {
 	glClearColor (0.0, 0.0, 0.0, 0.0);
 	glShadeModel(GL_FLAT);
@@ -38,6 +39,22 @@ void GLWorkbench::Init()
 					checkImage);
 }
 
+int GLWorkbench::run(int argc, char **argv)
+{
+	//char *argvAsMultibyte = (char *)malloc(sizeof argv);
+	//wcstombs(argvAsMultibyte, argv, 
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
+	glutInitWindowSize(250, 250);
+	glutInitWindowPosition(100, 100);
+	glutCreateWindow(argv[0]);
+	init();
+	glutDisplayFunc(GLWorkbench::display);
+	glutReshapeFunc(GLWorkbench::reshape);	
+	glutMainLoop();
+	return 0; 
+}
+
 void GLWorkbench::makeCheckImage()
 {
 	int i, j, c;
@@ -56,34 +73,34 @@ void GLWorkbench::makeCheckImage()
 void GLWorkbench::display()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-   glEnable(GL_TEXTURE_2D);
-   glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
-   glBindTexture(GL_TEXTURE_2D, texName);
-   glBegin(GL_QUADS);
-   glTexCoord2f(0.0, 0.0); glVertex3f(-2.0, -1.0, 0.0);
-   glTexCoord2f(0.0, 1.0); glVertex3f(-2.0, 1.0, 0.0);
-   glTexCoord2f(1.0, 1.0); glVertex3f(0.0, 1.0, 0.0);
-   glTexCoord2f(1.0, 0.0); glVertex3f(0.0, -1.0, 0.0);
+	glEnable(GL_TEXTURE_2D);
+	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
+	glBindTexture(GL_TEXTURE_2D, texName);
+	glBegin(GL_QUADS);
+	glTexCoord2f(0.0, 0.0); glVertex3f(-2.0, -1.0, 0.0);
+	glTexCoord2f(0.0, 1.0); glVertex3f(-2.0, 1.0, 0.0);
+	glTexCoord2f(1.0, 1.0); glVertex3f(0.0, 1.0, 0.0);
+	glTexCoord2f(1.0, 0.0); glVertex3f(0.0, -1.0, 0.0);
 
-   glTexCoord2f(0.0, 0.0); glVertex3f(1.0, -1.0, 0.0);
-   glTexCoord2f(0.0, 1.0); glVertex3f(1.0, 1.0, 0.0);
-   glTexCoord2f(1.0, 1.0); glVertex3f(2.41421, 1.0, -1.41421);
-   glTexCoord2f(1.0, 0.0); glVertex3f(2.41421, -1.0, -1.41421);
-   glEnd();
-   glFlush();
-   glDisable(GL_TEXTURE_2D);
+	glTexCoord2f(0.0, 0.0); glVertex3f(1.0, -1.0, 0.0);
+	glTexCoord2f(0.0, 1.0); glVertex3f(1.0, 1.0, 0.0);
+	glTexCoord2f(1.0, 1.0); glVertex3f(2.41421, 1.0, -1.41421);
+	glTexCoord2f(1.0, 0.0); glVertex3f(2.41421, -1.0, -1.41421);
+	glEnd();
+	glFlush();
+	glDisable(GL_TEXTURE_2D);
 }
 
 
 void GLWorkbench::reshape(int w, int h)
 {
-   glViewport(0, 0, (GLsizei) w, (GLsizei) h);
-   glMatrixMode(GL_PROJECTION);
-   glLoadIdentity();
-   gluPerspective(60.0, (GLfloat) w/(GLfloat) h, 1.0, 30.0);
-   glMatrixMode(GL_MODELVIEW);
-   glLoadIdentity();
-   glTranslatef(0.0, 0.0, -3.6);
+	glViewport(0, 0, (GLsizei) w, (GLsizei) h);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluPerspective(60.0, (GLfloat) w/(GLfloat) h, 1.0, 30.0);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	glTranslatef(0.0, 0.0, -3.6);
 }
 
 void GLWorkbench::keyboard (unsigned char key, int x, int y)

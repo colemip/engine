@@ -11,10 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CollisionEntity.cpp" />
-    <ClCompile Include="GLWorkbench.cpp" />
-    <ClCompile Include="sePoint.cpp" />
-    <ClCompile Include="seSprite.cpp" />
+    <ClCompile Include="src\CollisionEntity.cpp" />
+    <ClCompile Include="src\GLWorkbench.cpp" />
+    <ClCompile Include="src\sePoint.cpp" />
+    <ClCompile Include="src\seSprite.cpp" />
     <ClCompile Include="src\input\Mouse.cpp" />
     <ClCompile Include="src\Camera.cpp" />
     <ClCompile Include="src\input\Gamepad.cpp" />
@@ -24,10 +24,10 @@
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CollisionEntity.h" />
-    <ClInclude Include="GLWorkbench.h" />
-    <ClInclude Include="sePoint.h" />
-    <ClInclude Include="seSprite.h" />
+    <ClInclude Include="src\CollisionEntity.h" />
+    <ClInclude Include="src\GLWorkbench.h" />
+    <ClInclude Include="src\sePoint.h" />
+    <ClInclude Include="src\seSprite.h" />
     <ClInclude Include="src\input\Mouse.h" />
     <ClInclude Include="src\Camera.h" />
     <ClInclude Include="src\input\Keyboard.h" />

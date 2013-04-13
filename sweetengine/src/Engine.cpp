@@ -8,7 +8,7 @@ Engine::Engine()
 	std::cout << "Constructing Engine" << std::endl;
 	this->keyboard = new Sweet::Keyboard();
 	this->mouse_1 = new Sweet::Mouse();
-	
+	this->glWorkbench = new GLWorkbench();
 }
 
 
@@ -27,6 +27,10 @@ void Engine::Init()
 	/* Enable joysticks */
 	SDL_JoystickEventState(SDL_ENABLE);
 	this->gamepad_1 = new Sweet::Gamepad();
+
+
+	//this->glWorkbench->run();
+	//StartOpenGL();
 }
 
 int Engine::Update()
@@ -121,5 +125,18 @@ void Engine::InitOpenGL()
 	glOrtho(0, 640, 480, 0, 1, -1);
 	glMatrixMode(GL_MODELVIEW);
 	glEnable(GL_TEXTURE_2D);
-	glLoadIdentity();
+	glLoadIdentity();	 
 }
+
+void Engine::runGLWorkbench(int argc, char **argv)
+{
+	this->glWorkbench->run(argc, argv);
+}
+
+//int Engine::StartOpenGL()
+//{
+//	glutDisplayFunc(GLWorkbench::display);
+//	glutReshapeFunc(GLWorkbench::reshape);	
+//	glutMainLoop();
+//	return 0;
+//}

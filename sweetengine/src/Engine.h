@@ -8,6 +8,7 @@
 #include "input\Mouse.h"
 #include "input\Gamepad.h"
 #include "event\Event.h"
+#include "GLWorkbench.h"
 
 
 namespace Sweet
@@ -21,6 +22,7 @@ namespace Sweet
 		Sweet::Keyboard *keyboard;
 		Sweet::Mouse *mouse_1;
 		Sweet::Gamepad *gamepad_1;
+		Sweet::GLWorkbench *glWorkbench;
 
 	public:
 		Engine();
@@ -36,7 +38,12 @@ namespace Sweet
 		void OnEvent(Sweet::Event *e);
 		void OnSDLEvent(SDL_Event *e);
 		int PollEvent(Sweet::Event *e);
-		void InitOpenGL();
+		/* OpenGL */
+		void InitOpenGL();		
+		int StartOpenGL();
+		static void display();		
+		static void reshape(int w, int h);
+		void runGLWorkbench(int argc, char **argv);
 	};
 }
 

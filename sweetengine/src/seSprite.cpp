@@ -11,6 +11,21 @@ seSprite::~seSprite()
 {
 }
 
+std::string seSprite::FileName()
+{
+	return this->fileName;
+}
+
+seFloat seSprite::X()
+{
+	return this->position->X();
+}
+
+seFloat seSprite::Y()
+{
+	return this->position->Y();
+}
+
 void seSprite::DrawBoundingBox()
 {
 }

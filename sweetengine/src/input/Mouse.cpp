@@ -19,7 +19,7 @@ void Mouse::Init()
 
 void Mouse::OnMouseMove(SDL_MouseMotionEvent *mme)
 {
-	std::cout << "Mouse at (" <<  mme->x << ", " << mme->y << ")" << std::endl;
+	//std::cout << "Mouse at (" <<  mme->x << ", " << mme->y << ")" << std::endl;
 }
 
 void Mouse::OnMouseDown(SDL_MouseButtonEvent *mbe)

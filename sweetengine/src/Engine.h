@@ -1,7 +1,6 @@
 #ifndef SWEET_ENGINE_H
 #define SWEET_ENGINE_H
 
-#include <string>
 #include <SDL.h>
 #include <glut.h>
 #include "input\Keyboard.h"
@@ -9,6 +8,7 @@
 #include "input\Gamepad.h"
 #include "event\Event.h"
 #include "GLWorkbench.h"
+#include "Types.h"
 
 
 namespace Sweet
@@ -16,7 +16,7 @@ namespace Sweet
 	class Engine
 	{
 	private:
-		std::string version;
+		seString version;
 		static Sweet::Engine *instance;
 		bool running;
 		Sweet::Keyboard *keyboard;

@@ -11,7 +11,7 @@ seSprite::~seSprite()
 {
 }
 
-std::string seSprite::FileName()
+seString seSprite::FileName()
 {
 	return this->fileName;
 }

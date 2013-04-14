@@ -112,3 +112,12 @@ void GLWorkbench::Keyboard (unsigned char key, int x, int y)
    }
 }
 
+void GLWorkbench::LoadPNG(const char *fileName)
+{
+	SDL_Surface *surface;
+
+	if((surface = IMG_Load("test.png")))
+	{
+	}
+}
+

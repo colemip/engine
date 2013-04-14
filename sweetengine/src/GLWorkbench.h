@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <glut.h>
+#include "SDL.h"
+#include "SDL_image.h"
+#include "SDL_opengl.h"
 
 /*  Create checkerboard texture  */
 #define checkImageWidth 64
@@ -25,6 +28,7 @@ namespace Sweet
 		static void Display();
 		static void Reshape(int w, int h);
 		void Keyboard (unsigned char key, int x, int y);
+		void LoadPNG(const char *fileName);
 	};
 }
 

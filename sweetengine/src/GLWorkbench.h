@@ -28,12 +28,15 @@ namespace Sweet
 		~GLWorkbench();
 		void Init();
 		int Run(int argc, char **argv);
+		int RunWithSprite();
 		void MakeCheckImage();
 		static void Display();
 		static void Reshape(int w, int h);
 		void Keyboard (unsigned char key, int x, int y);
 		int LoadPNG(const char *fileName);
-		void DrawImage(const char *fileName);
+		void DrawImage();
+		void Init_GL();
+		void CleanUp();
 	};
 }
 

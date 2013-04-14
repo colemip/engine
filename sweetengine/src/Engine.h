@@ -22,7 +22,7 @@ namespace Sweet
 		Sweet::Keyboard *keyboard;
 		Sweet::Mouse *mouse_1;
 		Sweet::Gamepad *gamepad_1;
-
+		Sweet::GLWorkbench *glWorkbench;
 	public:
 		Engine();
 		~Engine();

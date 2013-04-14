@@ -8,6 +8,7 @@ Engine::Engine()
 	std::cout << "Constructing Engine" << std::endl;
 	this->keyboard = new Sweet::Keyboard();
 	this->mouse_1 = new Sweet::Mouse();	
+	this->glWorkbench = new GLWorkbench();
 }
 
 
@@ -19,7 +20,7 @@ void Engine::Init()
 {
 	this->running = true;
 	SDL_Init( SDL_INIT_VIDEO | SDL_INIT_JOYSTICK );
-	SDL_SetVideoMode( 640, 480, 32, 0);
+	SDL_SetVideoMode( 640, 480, 32, SDL_OPENGL);
 	SDL_EnableUNICODE( 1 );	
 
 	/* Enable joysticks */
@@ -34,6 +35,9 @@ int Engine::Update()
 
 void Engine::StartUp()
 {
+	/* OpenGL sprite test */
+	this->glWorkbench->RunWithSprite();
+
 	/* Startup messages */
 	for(int i=0; i<SDL_NumJoysticks(); i++)
 		std::cout << "Joystick '" << SDL_JoystickName(i) << "' Detected" << std::endl;

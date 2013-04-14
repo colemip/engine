@@ -1,5 +1,7 @@
 /*
-Examples taken from http://www.glprogramming.com/red/chapter09.html
+Examples taken from 
+http://www.glprogramming.com/red/chapter09.html
+http://www.gaanza.com/blog/display-2d-sprite/
 */
 
 #include <tchar.h>
@@ -7,6 +9,9 @@ Examples taken from http://www.glprogramming.com/red/chapter09.html
 #include "GLWorkbench.h"
 
 using namespace Sweet;
+
+#define SPRITE_TEST 1
+#define TEXTURE_TEST 0
 
 GLWorkbench::GLWorkbench()
 {
@@ -47,11 +52,22 @@ int GLWorkbench::Run(int argc, char **argv)
 	glutInitWindowSize(250, 250);
 	glutInitWindowPosition(100, 100);
 	glutCreateWindow(argv[0]);
-	Init();
+	if(TEXTURE_TEST)
+		Init();
+	else if(SPRITE_TEST)
+		Init_GL();
 	glutDisplayFunc(GLWorkbench::Display);
 	glutReshapeFunc(GLWorkbench::Reshape);	
 	glutMainLoop();
 	return 0; 
+}
+
+int GLWorkbench::RunWithSprite()
+{
+	Init_GL();
+	LoadPNG("C:\\projects\\engine\\sweetengine\\build\\bin\\Debug\\helloworld.png");
+	DrawImage();
+	return 0;
 }
 
 void GLWorkbench::MakeCheckImage()
@@ -116,6 +132,9 @@ void GLWorkbench::Keyboard (unsigned char key, int x, int y)
 int GLWorkbench::LoadPNG(const char *fileName)
 {
 	SDL_Surface *surface;
+	int imgInitValue = IMG_Init(IMG_INIT_PNG);
+	if((imgInitValue & IMG_INIT_PNG) != IMG_INIT_PNG)
+		std::cout << "Failed to init png support" << std::endl;
 
 	if((surface = IMG_Load(fileName)))
 	{
@@ -140,6 +159,13 @@ int GLWorkbench::LoadPNG(const char *fileName)
 				texture_format = GL_RGBA;
 			else
 				texture_format = GL_BGR;
+		}
+		else if(nofcolors==3) //no alpha channel
+		{
+			if(surface->format->Rmask==0x000000ff)
+				texture_format=GL_RGB;
+			else
+				texture_format=GL_BGR;
 		}
 		else
 		{
@@ -173,8 +199,48 @@ int GLWorkbench::LoadPNG(const char *fileName)
 	return 0;
 }
 
-void GLWorkbench::DrawImage(const char *fileName)
+void GLWorkbench::DrawImage()
 {
+	// Clear screen buffer
+	glClear(GL_COLOR_BUFFER_BIT);
 
+	// Bind the texture to which subsequent calls refer to
+	glBindTexture(GL_TEXTURE_2D, texture);
+
+	glBegin(GL_QUADS);
+	// Top-left vertex
+	glTexCoord2i(0, 0);
+	glVertex3f(100, 100, 0);
+	// Bottom-left vertex
+	glTexCoord2i(1, 0);
+	glVertex3f(228, 100, 0);
+	// Bottom-right vertex
+	glTexCoord2i(1, 1);
+	glVertex3f(228, 228, 0);
+	// Top-right vertex
+	glTexCoord2i(0, 1);
+	glVertex3f(100, 228, 0);
+
+	glEnd();
+	glLoadIdentity();
+	SDL_GL_SwapBuffers();
 }
 
+
+void GLWorkbench::Init_GL()
+{
+	SDL_GL_SetAttribute( SDL_GL_DOUBLEBUFFER, 1 );
+	glClearColor(0, 0, 0, 0);
+	glEnable(GL_TEXTURE_2D);
+	glViewport(0, 0, 640, 480);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glOrtho(0, 640, 480, 0, -1, 1);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+}
+
+void GLWorkbench::CleanUp()
+{
+	glDeleteTextures(1, &texture);	
+}

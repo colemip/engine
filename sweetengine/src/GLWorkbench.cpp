@@ -3,6 +3,7 @@ Examples taken from http://www.glprogramming.com/red/chapter09.html
 */
 
 #include <tchar.h>
+#include <iostream>
 #include "GLWorkbench.h"
 
 using namespace Sweet;
@@ -112,12 +113,68 @@ void GLWorkbench::Keyboard (unsigned char key, int x, int y)
    }
 }
 
-void GLWorkbench::LoadPNG(const char *fileName)
+int GLWorkbench::LoadPNG(const char *fileName)
 {
 	SDL_Surface *surface;
 
-	if((surface = IMG_Load("test.png")))
+	if((surface = IMG_Load(fileName)))
 	{
+		/* check if image's width is power of 2 */
+		if((surface->w & (surface->w - 1)) != 0)
+		{
+			std::cout << "WARNING: image's width NOT power of 2" << std::endl;
+		}
+		/* check if image's height is power of 2 */
+		if((surface->h & (surface->h - 1)) != 0)
+		{
+			std::cout << "WARNING: image's height NOT power of 2" << std::endl;
+		}
+
+		/* get number of channels in surface */
+		nofcolors = surface->format->BytesPerPixel;
+
+		// contains an alpha channel
+		if(nofcolors == 4)
+		{
+			if(surface->format->Rmask == 0x000000ff)
+				texture_format = GL_RGBA;
+			else
+				texture_format = GL_BGR;
+		}
+		else
+		{
+			std::cout << "Image is NOT truecolor" << std::endl;
+		}
+
+		// have OpenGL generate a texture object handle
+		glGenTextures(1, &texture);
+
+		// bind the texture object
+		glBindTexture(GL_TEXTURE_2D, texture);
+
+		// set the texture's stretching properties
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+		glTexImage2D(GL_TEXTURE_2D, 0, nofcolors, surface->w, surface->h, 0, texture_format, GL_UNSIGNED_BYTE, surface->pixels);
 	}
+	else
+	{
+		std::cout << "Could not load image.bmp: " << SDL_GetError() << std::endl;
+		return 1;
+	}
+
+	// Free the SDL_Surface only if it was successfully created
+	if(surface)
+	{
+		SDL_FreeSurface(surface);
+	}
+
+	return 0;
+}
+
+void GLWorkbench::DrawImage(const char *fileName)
+{
+
 }
 

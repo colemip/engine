@@ -16,6 +16,10 @@ namespace Sweet
 {
 	static GLubyte checkImage[checkImageHeight][checkImageWidth][4];
 	static GLuint texName;
+	/* bmp info */
+	static GLuint texture = NULL;
+	static GLenum texture_format = NULL;
+	static GLint nofcolors;
 
 	class GLWorkbench
 	{
@@ -28,7 +32,8 @@ namespace Sweet
 		static void Display();
 		static void Reshape(int w, int h);
 		void Keyboard (unsigned char key, int x, int y);
-		void LoadPNG(const char *fileName);
+		int LoadPNG(const char *fileName);
+		void DrawImage(const char *fileName);
 	};
 }
 

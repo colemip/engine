@@ -102,14 +102,17 @@ int seSprite::LoadFromPNG(const char *fileName)
 
 void seSprite::DrawBoundingBox()
 {
-	glBegin(GL_LINE_LOOP);
-	glColor3b(0, 1, 0);
-	glVertex3f(-0.25f, -0.25f, 0.0f);
-	glVertex3f(-0.25f, 0.25f, 0.0f);
-	glVertex3f(0.25f, 0.25f, 0.0f);
-	glVertex3f(0.25f, -0.25f, 0.0f);
-	glEnd();
+	//clear color and depth buffer 
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glLoadIdentity(); //load identity matrix
+	glColor3f(0, 1, 0);
 
+	glBegin(GL_LINE_LOOP);
+		glVertex3f(-0.25f, -0.25f, 0.0f);
+		glVertex3f(-0.25f, 0.25f, 0.0f);
+		glVertex3f(0.25f, 0.25f, 0.0f);
+		glVertex3f(0.25f, -0.25f, 0.0f);
+	glEnd();
 }
 
 void seSprite::Move()

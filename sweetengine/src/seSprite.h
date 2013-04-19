@@ -26,7 +26,9 @@ namespace Sweet
 		~seSprite();
 		seString FileName();
 		seFloat X();
+		void X(seFloat value);
 		seFloat Y();
+		void Y(seFloat value);
 		void Init_GL();
 		void Draw();
 		int LoadFromPNG(const char *fileName);

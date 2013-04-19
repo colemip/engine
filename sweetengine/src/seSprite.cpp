@@ -6,6 +6,9 @@ seSprite::seSprite()
 {
 	this->texture = NULL;
 	this->texture_format = NULL;
+	this->position = new sePoint(0.0, 0.0, 0.0);
+	this->X(0.0f);
+	this->Y(0.0f);
 }
 
 
@@ -23,10 +26,21 @@ seFloat seSprite::X()
 	return this->position->X();
 }
 
+void seSprite::X(seFloat value)
+{
+	this->position->X(value);
+}
+
 seFloat seSprite::Y()
 {
 	return this->position->Y();
 }
+
+void seSprite::Y(seFloat value)
+{
+	this->position->Y(value);
+}
+
 
 void seSprite::Init_GL()
 {

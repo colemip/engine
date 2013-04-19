@@ -16,7 +16,9 @@ namespace Sweet
 		sePoint(seFloat _x, seFloat _y, seFloat _z);
 		~sePoint();
 		seFloat X();
+		void X(seFloat value);				
 		seFloat Y();
+		void Y(seFloat value);
 		seFloat Z();
 		seFloat DistanceToPoint(sePoint *otherPoint);
 	};

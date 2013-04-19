@@ -80,10 +80,14 @@ void Engine::OnEvent(Sweet::Event *e)
 
 void Engine::OnSDLEvent(SDL_Event *e)
 {	
+	seFloat spriteX = 0.0f;
+
 	switch(e->type)
 	{
 		case SDL_KEYDOWN:
 			this->keyboard->OnKeyDown(&e->key);
+			spriteX = this->sprite->X();
+			this->sprite->X(spriteX+1);
 			break;
 		case SDL_KEYUP:
 			this->keyboard->OnKeyUp(&e->key);

@@ -27,7 +27,10 @@ namespace Sweet
 		seString FileName();
 		seFloat X();
 		seFloat Y();
+		void Init_GL();
+		void Draw();
 		int LoadFromPNG(const char *fileName);
+		void DrawImage();
 		void DrawBoundingBox(); 
 		virtual void Move();
 		void SetColliderPosition(sePoint *_position);

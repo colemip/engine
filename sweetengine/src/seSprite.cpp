@@ -28,6 +28,26 @@ seFloat seSprite::Y()
 	return this->position->Y();
 }
 
+void seSprite::Init_GL()
+{
+	SDL_GL_SetAttribute( SDL_GL_DOUBLEBUFFER, 1 );
+	glClearColor(0, 0, 0, 0);
+	glEnable(GL_TEXTURE_2D);
+	glViewport(0, 0, 640, 480);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glOrtho(0, 640, 480, 0, -1, 1);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+}
+
+void seSprite::Draw()
+{
+	Init_GL();
+	LoadFromPNG("C:\\projects\\engine\\sweetengine\\build\\bin\\Debug\\helloworld.png");
+	DrawImage();
+}
+
 int seSprite::LoadFromPNG(const char *fileName)
 {
 	SDL_Surface *surface;
@@ -98,6 +118,33 @@ int seSprite::LoadFromPNG(const char *fileName)
 	}
 
 	return 0;
+}
+
+void seSprite::DrawImage()
+{
+	// Clear screen buffer
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	// Bind the texture to which subsequent calls refer to
+	glBindTexture(GL_TEXTURE_2D, texture);
+
+	glBegin(GL_QUADS);
+	// Top-left vertex
+	glTexCoord2i(0, 0);
+	glVertex3f(100, 100, 0);
+	// Bottom-left vertex
+	glTexCoord2i(1, 0);
+	glVertex3f(228, 100, 0);
+	// Bottom-right vertex
+	glTexCoord2i(1, 1);
+	glVertex3f(228, 228, 0);
+	// Top-right vertex
+	glTexCoord2i(0, 1);
+	glVertex3f(100, 228, 0);
+
+	glEnd();
+	glLoadIdentity();
+	SDL_GL_SwapBuffers();
 }
 
 void seSprite::DrawBoundingBox()

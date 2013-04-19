@@ -40,7 +40,7 @@ int GLWorkbench::Run(int argc, char **argv)
 
 int GLWorkbench::RunWithSprite()
 {
-	Init_GL();
+	Init_GL();	
 	LoadPNG("C:\\projects\\engine\\sweetengine\\build\\bin\\Debug\\helloworld.png");
 	DrawImage();
 	return 0;

@@ -9,6 +9,7 @@
 #include "event\Event.h"
 #include "GLWorkbench.h"
 #include "Types.h"
+#include "seSprite.h"
 
 
 namespace Sweet
@@ -23,6 +24,7 @@ namespace Sweet
 		Sweet::Mouse *mouse_1;
 		Sweet::Gamepad *gamepad_1;
 		Sweet::GLWorkbench *glWorkbench;
+		Sweet::seSprite *sprite;
 	public:
 		Engine();
 		~Engine();

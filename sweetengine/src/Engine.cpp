@@ -8,7 +8,8 @@ Engine::Engine()
 	std::cout << "Constructing Engine" << std::endl;
 	this->keyboard = new Sweet::Keyboard();
 	this->mouse_1 = new Sweet::Mouse();	
-	this->glWorkbench = new GLWorkbench();
+	this->glWorkbench = new Sweet::GLWorkbench();
+	this->sprite = new Sweet::seSprite();
 }
 
 
@@ -36,7 +37,9 @@ int Engine::Update()
 void Engine::StartUp()
 {
 	/* OpenGL sprite test */
-	this->glWorkbench->RunWithSprite();
+	//this->glWorkbench->RunWithSprite();
+
+	this->sprite->Draw();
 
 	/* Startup messages */
 	for(int i=0; i<SDL_NumJoysticks(); i++)
@@ -49,7 +52,7 @@ void Engine::StartUp()
 	{
 		// do engine things
 
-		this->glWorkbench->OnRender();
+		//this->glWorkbench->OnRender();
 		// listen for input
 		while(PollEvent(&event));
 	}

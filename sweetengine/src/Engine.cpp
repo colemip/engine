@@ -49,6 +49,7 @@ void Engine::StartUp()
 	{
 		// do engine things
 
+		this->glWorkbench->OnRender();
 		// listen for input
 		while(PollEvent(&event));
 	}

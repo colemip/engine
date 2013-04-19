@@ -36,6 +36,8 @@ namespace Sweet
 		int LoadPNG(const char *fileName);
 		void DrawImage();
 		void Init_GL();
+		bool Init_SDL_GL();
+		void OnRender();
 		void CleanUp();
 	};
 }

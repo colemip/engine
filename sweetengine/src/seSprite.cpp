@@ -45,7 +45,7 @@ void seSprite::Draw()
 {
 	Init_GL();
 	LoadFromPNG("C:\\projects\\engine\\sweetengine\\art\\helloworld.png");
-	DrawImage();
+	DrawImage(this->X(), this->Y());
 }
 
 int seSprite::LoadFromPNG(const char *fileName)
@@ -120,7 +120,7 @@ int seSprite::LoadFromPNG(const char *fileName)
 	return 0;
 }
 
-void seSprite::DrawImage()
+void seSprite::DrawImage(seFloat x, seFloat y)
 {
 	// Clear screen buffer
 	glClear(GL_COLOR_BUFFER_BIT);
@@ -131,16 +131,16 @@ void seSprite::DrawImage()
 	glBegin(GL_QUADS);
 	// Top-left vertex
 	glTexCoord2i(0, 0);
-	glVertex3f(100, 100, 0);
+	glVertex3f(x, y, 0);
 	// Bottom-left vertex
 	glTexCoord2i(1, 0);
-	glVertex3f(228, 100, 0);
+	glVertex3f(x+128, y, 0);
 	// Bottom-right vertex
 	glTexCoord2i(1, 1);
-	glVertex3f(228, 228, 0);
+	glVertex3f(x+128, y+128, 0);
 	// Top-right vertex
 	glTexCoord2i(0, 1);
-	glVertex3f(100, 228, 0);
+	glVertex3f(x, y+128, 0);
 
 	glEnd();
 	glLoadIdentity();

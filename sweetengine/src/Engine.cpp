@@ -35,12 +35,7 @@ int Engine::Update()
 }
 
 void Engine::StartUp()
-{
-	/* OpenGL sprite test */
-	//this->glWorkbench->RunWithSprite();
-
-	this->sprite->Draw();
-
+{		
 	/* Startup messages */
 	for(int i=0; i<SDL_NumJoysticks(); i++)
 		std::cout << "Joystick '" << SDL_JoystickName(i) << "' Detected" << std::endl;
@@ -49,10 +44,9 @@ void Engine::StartUp()
 	Sweet::Event event;
 
 	while(this->running)
-	{
+	{		
 		// do engine things
-
-		//this->glWorkbench->OnRender();
+		this->sprite->Draw();				
 		// listen for input
 		while(PollEvent(&event));
 	}
@@ -88,10 +82,10 @@ void Engine::OnSDLEvent(SDL_Event *e)
 {	
 	switch(e->type)
 	{
-		case SDL_KEYUP:
+		case SDL_KEYDOWN:
 			this->keyboard->OnKeyDown(&e->key);
 			break;
-		case SDL_KEYDOWN:
+		case SDL_KEYUP:
 			this->keyboard->OnKeyUp(&e->key);
 			break;
 		case SDL_MOUSEMOTION:
@@ -132,8 +126,3 @@ void Engine::InitOpenGL()
 	glEnable(GL_TEXTURE_2D);
 	glLoadIdentity();	 
 }
-
-//void Engine::RunGLWorkbench(int argc, char **argv)
-//{
-//	this->glWorkbench->Run(argc, argv);
-//}

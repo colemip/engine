@@ -44,7 +44,7 @@ void seSprite::Init_GL()
 void seSprite::Draw()
 {
 	Init_GL();
-	LoadFromPNG("C:\\projects\\engine\\sweetengine\\build\\bin\\Debug\\helloworld.png");
+	LoadFromPNG("C:\\projects\\engine\\sweetengine\\art\\helloworld.png");
 	DrawImage();
 }
 

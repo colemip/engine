@@ -21,6 +21,12 @@ namespace Sweet
 		void PrintKeys();
 		bool IsKeyDown(SDLKey key);
 	};
+
+	typedef struct KeyEvent
+	{
+		SDLKey key;
+		Uint32 duration;
+	} KeyEvent;
 }
 
 #endif

@@ -1,4 +1,6 @@
 #include <iostream>
+#include <list>
+#include <iterator>
 #include "Engine.h"
 
 using namespace Sweet;

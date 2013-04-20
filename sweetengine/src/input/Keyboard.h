@@ -2,18 +2,23 @@
 #define SWEET_KEYBOARD_H
 
 #include <SDL.h>
+#include <list>
 
 namespace Sweet
 {
 	class Keyboard
 	{
+	private:
+		std::list<SDLKey> keysDown;
 	public:
 		Keyboard();
 		~Keyboard();
 		void OnKeyDown(SDL_KeyboardEvent *kbe);
 		void OnKeyUp(SDL_KeyboardEvent *kbe);
-		/*void OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode);
-		void OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode);*/
+	private:
+		void AddKey(SDLKey key);
+		void RemoveKey(SDLKey key);
+		void PrintKeys();
 	};
 }
 

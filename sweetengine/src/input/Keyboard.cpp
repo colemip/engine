@@ -32,18 +32,9 @@ void Keyboard::AddKey(SDLKey key)
 }
 
 void Keyboard::RemoveKey(SDLKey key)
-{
-	std::list<SDLKey>::iterator iterator;	
-	bool keyFound = false;
-
-	// find key in list of pressed keys		
-	for(iterator = keysDown.begin(); iterator != keysDown.end(); iterator++)
-	{
-		if((keyFound = (key == *iterator)))
-			break;		
-	}
-	if(keyFound)
-		keysDown.remove(*iterator);
+{	
+	if(IsKeyDown(key))
+		keysDown.remove(key);
 }
 
 bool Keyboard::IsKeyDown(SDLKey key)

@@ -19,6 +19,7 @@ namespace Sweet
 		void AddKey(SDLKey key);
 		void RemoveKey(SDLKey key);
 		void PrintKeys();
+		bool IsKeyDown(SDLKey key);
 	};
 }
 

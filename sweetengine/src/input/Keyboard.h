@@ -22,7 +22,7 @@ namespace Sweet
 		void OnKeyDown(SDL_KeyboardEvent *kbe);
 		void OnKeyUp(SDL_KeyboardEvent *kbe);
 	private:
-		void AddKey(seKeyEvent key);
+		void AddKey(seKeyEvent *key);
 		void RemoveKey(SDLKey key);
 		void PrintKeys();
 		seKeyEvent* IsKeyDown(SDLKey key);

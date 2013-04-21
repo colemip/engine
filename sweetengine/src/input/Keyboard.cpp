@@ -14,22 +14,21 @@ Keyboard::~Keyboard()
 void Keyboard::OnKeyDown(SDL_KeyboardEvent *kbe)
 {
 	std::cout << "Key down: " << SDL_GetKeyName( kbe->keysym.sym ) << std::endl;
-	seKeyEvent kEvent;
-	kEvent.keyEvent = kbe;
-	kEvent.duration - 0;
+	seKeyEvent *kEvent = new seKeyEvent;
+	kEvent->keyEvent = kbe;
+	kEvent->duration = 0;
 	AddKey(kEvent);		
 }
 
 void Keyboard::OnKeyUp(SDL_KeyboardEvent *kbe)
 {
 	std::cout << "Key up: " << SDL_GetKeyName( kbe->keysym.sym ) << std::endl;	
-	RemoveKey(kbe->keysym.sym);
-	std::cout << "list size: " << keysDown.size() << std::endl;
+	RemoveKey(kbe->keysym.sym);	
 }
 
-void Keyboard::AddKey(seKeyEvent kEvent)
+void Keyboard::AddKey(seKeyEvent *kEvent)
 {
-	this->keysDown.push_back(&kEvent);
+	this->keysDown.push_back(kEvent);
 }
 
 void Keyboard::RemoveKey(SDLKey key)

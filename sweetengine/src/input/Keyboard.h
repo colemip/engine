@@ -6,27 +6,28 @@
 
 namespace Sweet
 {
+	typedef struct seKeyEvent
+	{
+		SDL_KeyboardEvent *keyEvent;
+		Uint32 duration;
+	} KeyEvent;
+
 	class Keyboard
 	{
 	private:
-		std::list<SDLKey> keysDown;
+		std::list<seKeyEvent *> keysDown;
 	public:
 		Keyboard();
 		~Keyboard();
 		void OnKeyDown(SDL_KeyboardEvent *kbe);
 		void OnKeyUp(SDL_KeyboardEvent *kbe);
 	private:
-		void AddKey(SDLKey key);
+		void AddKey(seKeyEvent key);
 		void RemoveKey(SDLKey key);
 		void PrintKeys();
-		bool IsKeyDown(SDLKey key);
-	};
-
-	typedef struct KeyEvent
-	{
-		SDLKey key;
-		Uint32 duration;
-	} KeyEvent;
+		seKeyEvent* IsKeyDown(SDLKey key);
+		void UpdateKeyDownTime();
+	};	
 }
 
 #endif

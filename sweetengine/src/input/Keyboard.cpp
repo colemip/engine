@@ -23,6 +23,8 @@ void Keyboard::OnKeyDown(SDL_KeyboardEvent *kbe)
 void Keyboard::OnKeyUp(SDL_KeyboardEvent *kbe)
 {
 	std::cout << "Key up: " << SDL_GetKeyName( kbe->keysym.sym ) << std::endl;	
+	seKeyEvent *kEvent = IsKeyDown(kbe->keysym.sym);
+	std::cout << "Key '" << SDL_GetKeyName(kbe->keysym.sym) << "' pressed for " << kEvent->duration << " ms" << std::endl;
 	RemoveKey(kbe->keysym.sym);	
 }
 

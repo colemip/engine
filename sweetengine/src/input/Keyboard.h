@@ -21,12 +21,12 @@ namespace Sweet
 		~Keyboard();
 		void OnKeyDown(SDL_KeyboardEvent *kbe);
 		void OnKeyUp(SDL_KeyboardEvent *kbe);
+		void UpdateKeyDownTime();
 	private:
 		void AddKey(seKeyEvent *key);
 		void RemoveKey(SDLKey key);
 		void PrintKeys();
-		seKeyEvent* IsKeyDown(SDLKey key);
-		void UpdateKeyDownTime();
+		seKeyEvent* IsKeyDown(SDLKey key);		
 	};	
 }
 

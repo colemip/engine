@@ -48,9 +48,10 @@ void Engine::StartUp()
 	while(this->running)
 	{		
 		// do engine things
-		this->sprite->Draw();				
+		this->sprite->Draw();			
 		// listen for input
 		while(PollEvent(&event));
+		this->keyboard->UpdateKeyDownTime();
 	}
 
 	CleanUp();

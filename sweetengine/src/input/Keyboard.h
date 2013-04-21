@@ -9,7 +9,7 @@ namespace Sweet
 	typedef struct seKeyEvent
 	{
 		SDL_KeyboardEvent *keyEvent;
-		Uint32 duration;
+		Uint32 beginTicks;
 	} KeyEvent;
 
 	class Keyboard
@@ -20,8 +20,7 @@ namespace Sweet
 		Keyboard();
 		~Keyboard();
 		void OnKeyDown(SDL_KeyboardEvent *kbe);
-		void OnKeyUp(SDL_KeyboardEvent *kbe);
-		void UpdateKeyDownTime();
+		void OnKeyUp(SDL_KeyboardEvent *kbe);		
 	private:
 		void AddKey(seKeyEvent *key);
 		void RemoveKey(SDLKey key);

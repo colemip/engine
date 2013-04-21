@@ -49,6 +49,7 @@ void Engine::StartUp()
 	{		
 		// do engine things
 		this->sprite->Draw();			
+
 		// listen for input
 		while(PollEvent(&event));		
 	}
@@ -72,6 +73,17 @@ int Engine::PollEvent(Sweet::Event *e)
 		OnSDLEvent(&sdl_e);
 	}
 
+	/* check for arrow key press to move sprite */
+	seKeyEvent *kEvent;
+	seFloat spriteX = 0.0f;	
+	kEvent = this->keyboard->IsKeyDown(SDLK_RIGHT);
+	if(kEvent != NULL)
+	{
+		std::cout << "Moving sprite" << std::endl;
+		spriteX = this->sprite->X();
+		this->sprite->X(spriteX+1);
+	}
+
 	return 0;
 }
 
@@ -81,15 +93,11 @@ void Engine::OnEvent(Sweet::Event *e)
 }
 
 void Engine::OnSDLEvent(SDL_Event *e)
-{	
-	seFloat spriteX = 0.0f;
-
+{		
 	switch(e->type)
 	{
 		case SDL_KEYDOWN:
-			this->keyboard->OnKeyDown(&e->key);
-			spriteX = this->sprite->X();
-			this->sprite->X(spriteX+1);
+			this->keyboard->OnKeyDown(&e->key);			
 			break;
 		case SDL_KEYUP:
 			this->keyboard->OnKeyUp(&e->key);

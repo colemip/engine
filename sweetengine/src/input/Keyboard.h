@@ -21,11 +21,11 @@ namespace Sweet
 		~Keyboard();
 		void OnKeyDown(SDL_KeyboardEvent *kbe);
 		void OnKeyUp(SDL_KeyboardEvent *kbe);		
+		seKeyEvent* IsKeyDown(SDLKey key);
 	private:
 		void AddKey(seKeyEvent *key);
 		void RemoveKey(SDLKey key);
-		void PrintKeys();
-		seKeyEvent* IsKeyDown(SDLKey key);		
+		void PrintKeys();				
 	};	
 }
 

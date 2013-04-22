@@ -22,6 +22,7 @@ namespace Sweet
 		void OnKeyDown(SDL_KeyboardEvent *kbe);
 		void OnKeyUp(SDL_KeyboardEvent *kbe);		
 		seKeyEvent* IsKeyDown(SDLKey key);
+		std::list<seKeyEvent *>* getKeysDown();
 	private:
 		void AddKey(seKeyEvent *key);
 		void RemoveKey(SDLKey key);

@@ -24,7 +24,7 @@ void Keyboard::OnKeyUp(SDL_KeyboardEvent *kbe)
 {
 	std::cout << "Key up: " << SDL_GetKeyName( kbe->keysym.sym ) << std::endl;	
 	seKeyEvent *kEvent = IsKeyDown(kbe->keysym.sym);
-	std::cout << "Key '" << SDL_GetKeyName(kbe->keysym.sym) << "' pressed for " << (SDL_GetTicks() - kEvent->beginTicks) << " ms" << std::endl;
+	//std::cout << "Key '" << SDL_GetKeyName(kbe->keysym.sym) << "' pressed for " << (SDL_GetTicks() - kEvent->beginTicks) << " ms" << std::endl;
 	RemoveKey(kbe->keysym.sym);	
 }
 
@@ -48,9 +48,14 @@ seKeyEvent* Keyboard::IsKeyDown(SDLKey key)
 	// check if key is in list of pressed keys
 	for(iterator = keysDown.begin(); iterator != keysDown.end(); iterator++)
 	{
-		if(key == (*iterator)->keyEvent->keysym.sym)
-			return *iterator;
+		if(key == (*iterator)->keyEvent->keysym.sym)		
+			return *iterator;		
 	}
 
 	return NULL;
+}
+
+std::list<seKeyEvent *>* Keyboard::getKeysDown()
+{
+	return &this->keysDown;
 }

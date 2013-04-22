@@ -44,14 +44,15 @@ void Engine::StartUp()
 
 
 	Sweet::Event event;
-
+	
 	while(this->running)
 	{		
+		//std::cout << "Running for " << SDL_GetTicks() << std::endl;
 		// do engine things
 		this->sprite->Draw();			
-
+		
 		// listen for input
-		while(PollEvent(&event));		
+		while(PollEvent(&event));				
 	}
 
 	CleanUp();
@@ -65,24 +66,30 @@ void Engine::CleanUp()
 }
 
 int Engine::PollEvent(Sweet::Event *e)
-{
+{		
 	/* SDL Events */
 	SDL_Event sdl_e; 
+	seKeyEvent *kEvent;
+	seFloat spriteX = 0.0f;
+
 	while(SDL_PollEvent(&sdl_e))
 	{
-		OnSDLEvent(&sdl_e);
+		//std::cout << "polling for SDL event" << std::endl;
+		OnSDLEvent(&sdl_e);		
+
+		/* check for arrow key press to move sprite */		
+		size_t keysDownSize = this->keyboard->getKeysDown()->size();
+		//std::cout << "Keys Down Count (Engine): " << keysDownSize << std::endl;
+		kEvent = this->keyboard->IsKeyDown(SDLK_RIGHT);
+		if(kEvent != NULL)
+		{
+			std::cout << "Moving sprite" << std::endl;
+			spriteX = this->sprite->X();
+			this->sprite->X(spriteX+1);
+		}
 	}
 
-	/* check for arrow key press to move sprite */
-	seKeyEvent *kEvent;
-	seFloat spriteX = 0.0f;	
-	kEvent = this->keyboard->IsKeyDown(SDLK_RIGHT);
-	if(kEvent != NULL)
-	{
-		std::cout << "Moving sprite" << std::endl;
-		spriteX = this->sprite->X();
-		this->sprite->X(spriteX+1);
-	}
+	
 
 	return 0;
 }

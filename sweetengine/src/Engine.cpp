@@ -75,22 +75,23 @@ int Engine::PollEvent(Sweet::Event *e)
 	while(SDL_PollEvent(&sdl_e))
 	{
 		//std::cout << "polling for SDL event" << std::endl;
-		OnSDLEvent(&sdl_e);		
-
-		/* check for arrow key press to move sprite */		
-		size_t keysDownSize = this->keyboard->getKeysDown()->size();
-		//std::cout << "Keys Down Count (Engine): " << keysDownSize << std::endl;
-		kEvent = this->keyboard->IsKeyDown(SDLK_RIGHT);
-		if(kEvent != NULL)
-		{
-			std::cout << "Moving sprite" << std::endl;
-			spriteX = this->sprite->X();
-			this->sprite->X(spriteX+1);
-		}
+		OnSDLEvent(&sdl_e);				
 	}
 
-	
+	//std::cout << "PollEvent: " << sdl_e.key.keysym.sym << std::endl;
 
+	/* check for arrow key press to move sprite */		
+	size_t keysDownSize = this->keyboard->getKeysDown()->size();
+	//std::cout << "Keys Down Count (Engine): " << keysDownSize << std::endl;
+	kEvent = this->keyboard->IsKeyDown(SDLK_RIGHT);
+	//std::cout << "checking for right arrow down" << std::endl;
+	if(kEvent != NULL)
+	{
+		std::cout << "Moving sprite" << std::endl;
+		spriteX = this->sprite->X();
+		this->sprite->X(spriteX+1);
+	}
+	
 	return 0;
 }
 
@@ -133,6 +134,8 @@ void Engine::OnSDLEvent(SDL_Event *e)
 		default: 
 			break;
 	}
+
+	//std::cout << "OnSDLEvent: " << e->key.keysym.sym << std::endl;
 }
 
 void Engine::InitOpenGL()

@@ -3,28 +3,30 @@
 
 #include <SDL.h>
 #include <list>
+#include <map>
 
 namespace Sweet
 {
-	typedef struct seKeyEvent
+	/*typedef struct seKeyEvent
 	{
-		SDL_KeyboardEvent *keyEvent;
+		SDL_KeyboardEvent keyEvent;
 		Uint32 beginTicks;
-	} KeyEvent;
+	} KeyEvent;*/
 
 	class Keyboard
 	{
 	private:
-		std::list<seKeyEvent *> keysDown;
+		//std::list<seKeyEvent *> keysDown;
+		std::map<SDLKey, Uint32> keysDown;
 	public:
 		Keyboard();
 		~Keyboard();
 		void OnKeyDown(SDL_KeyboardEvent *kbe);
 		void OnKeyUp(SDL_KeyboardEvent *kbe);		
-		seKeyEvent* IsKeyDown(SDLKey key);
-		std::list<seKeyEvent *>* getKeysDown();
+		bool IsKeyDown(SDLKey key);
+		std::map<SDLKey, Uint32>* getKeysDown();
 	private:
-		void AddKey(seKeyEvent *key);
+		void AddKey(SDLKey key, Uint32 time);
 		void RemoveKey(SDLKey key);
 		void PrintKeys();				
 	};	

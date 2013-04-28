@@ -69,6 +69,7 @@ int Engine::PollEvent(Sweet::Event *e)
 	/* SDL Events */
 	SDL_Event sdl_e; 	
 	seFloat spriteX = 0.0f;
+	seFloat spriteY = 0.0f;
 
 	while(SDL_PollEvent(&sdl_e))
 	{
@@ -77,11 +78,26 @@ int Engine::PollEvent(Sweet::Event *e)
 
 	if(this->keyboard->IsKeyDown(SDLK_RIGHT))
 	{
-		std::cout << "Moving sprite" << std::endl;
+		//std::cout << "Moving sprite" << std::endl;
 		spriteX = this->sprite->X();
 		this->sprite->X(spriteX+1);
 	}
-	
+	if(this->keyboard->IsKeyDown(SDLK_LEFT))
+	{
+		spriteX = this->sprite->X();
+		this->sprite->X(spriteX-1);
+	}
+	if(this->keyboard->IsKeyDown(SDLK_UP))
+	{
+		spriteY = this->sprite->Y();
+		this->sprite->Y(spriteY-1);
+	}
+	if(this->keyboard->IsKeyDown(SDLK_DOWN))
+	{
+		spriteY = this->sprite->Y();
+		this->sprite->Y(spriteY+1);
+	}
+
 	return 0;
 }
 

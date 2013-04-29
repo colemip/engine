@@ -122,27 +122,23 @@ int Engine::PollEvent(Sweet::Event *e)
 	}
 
 	/* gamepad axis events for moving sprite */
-	int gamepadThreshold = 5000;
-	if(this->gamepad_1->GetAxisValue(LEFT_STICK_X) > gamepadThreshold &&
-		abs(this->gamepad_1->GetAxisValue(LEFT_STICK_X)) > abs(this->gamepad_1->GetAxisValue(LEFT_STICK_Y)))
+	int gamepadThreshold = 16000;	
+	if(this->gamepad_1->GetAxisValue(LEFT_STICK_X) > gamepadThreshold)
 	{
 		spriteX = this->sprite->X();
 		this->sprite->X(spriteX+1);
 	}
-	if(this->gamepad_1->GetAxisValue(LEFT_STICK_X) < -gamepadThreshold &&
-		abs(this->gamepad_1->GetAxisValue(LEFT_STICK_X)) > abs(this->gamepad_1->GetAxisValue(LEFT_STICK_Y)))
+	if(this->gamepad_1->GetAxisValue(LEFT_STICK_X) < -gamepadThreshold)
 	{
 		spriteX = this->sprite->X();
 		this->sprite->X(spriteX-1);
 	}
-	if(this->gamepad_1->GetAxisValue(LEFT_STICK_Y) > gamepadThreshold &&
-		abs(this->gamepad_1->GetAxisValue(LEFT_STICK_Y)) > abs(this->gamepad_1->GetAxisValue(LEFT_STICK_X)))
+	if(this->gamepad_1->GetAxisValue(LEFT_STICK_Y) > gamepadThreshold)
 	{
 		spriteY = this->sprite->Y();
 		this->sprite->Y(spriteY+1);
 	}
-	if(this->gamepad_1->GetAxisValue(LEFT_STICK_Y) < -gamepadThreshold &&
-		abs(this->gamepad_1->GetAxisValue(LEFT_STICK_Y)) > abs(this->gamepad_1->GetAxisValue(LEFT_STICK_X)))
+	if(this->gamepad_1->GetAxisValue(LEFT_STICK_Y) < -gamepadThreshold)
 	{
 		spriteY = this->sprite->Y();
 		this->sprite->Y(spriteY-1);

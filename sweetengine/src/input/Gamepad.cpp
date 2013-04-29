@@ -55,12 +55,6 @@ void Gamepad::OnJoyAxisMotion(SDL_JoyAxisEvent *jae)
 		case LEFT_STICK_Y:
 			std::cout << "Axis " << i << " value: " << GetAxisValue(LEFT_STICK_Y) << std::endl;			
 			break;
-		case RIGHT_STICK_X:
-			std::cout << "Axis " << i << " value: " << GetAxisValue(RIGHT_STICK_X) << std::endl;			
-			break;
-		case RIGHT_STICK_Y:
-			std::cout << "Axis " << i << " value: " << GetAxisValue(RIGHT_STICK_Y) << std::endl;			
-			break;
 		}
 	}	
 }

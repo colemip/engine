@@ -21,23 +21,24 @@ Gamepad::~Gamepad()
 
 
 void Gamepad::OnButtonDown(SDL_JoyButtonEvent *jbe)
-{
-	//std::cout << "Gamepad Button Down: " << jbe->button << std::endl;
-
-	/*for(int i=0; i<SDL_JoystickNumButtons(this->joystick); i++)
-		if(SDL_JoystickGetButton(this->joystick, i))*/
+{	
+	/* check that state is pressed */
 	if(jbe->state == SDL_PRESSED)
-		std::cout << "Gamepad Button Down" << std::endl;
+	{
+		std::cout << "Gamepad Button Down: " << std::endl;
+		this->buttonsDown.insert(std::pair<Uint8, Uint32>(jbe->button, SDL_GetTicks()));
+	}	
 }
 
 
 void Gamepad::OnButtonUp(SDL_JoyButtonEvent *jbe)
 {
-	/*for(int i=0; i<SDL_JoystickNumButtons(this->joystick); i++)
-		if(SDL_JoystickGetButton(this->joystick, i))*/
+	/* check that state is released */
 	if(jbe->state == SDL_RELEASED)
+	{
 		std::cout << "Gamepad Button Up" << std::endl;
-
+		this->buttonsDown.erase(jbe->button);
+	}	
 }
 
 void Gamepad::OnJoyAxisMotion(SDL_JoyAxisEvent *jae)
@@ -48,34 +49,32 @@ void Gamepad::OnJoyAxisMotion(SDL_JoyAxisEvent *jae)
 	{
 		switch(i)
 		{
-		case GamepadAxis::LEFT_STICK_LR:
-			std::cout << "Axis " << i << " value: " << GetAxisValue(LEFT_STICK_LR) << std::endl;
+		case LEFT_STICK_X:
+			std::cout << "Axis " << i << " value: " << GetAxisValue(LEFT_STICK_X) << std::endl;			
 			break;
-		case GamepadAxis::LEFT_STICK_UD:
-			std::cout << "Axis " << i << " value: " << GetAxisValue(LEFT_STICK_UD) << std::endl;
+		case LEFT_STICK_Y:
+			std::cout << "Axis " << i << " value: " << GetAxisValue(LEFT_STICK_Y) << std::endl;			
 			break;
-		case GamepadAxis::RIGHT_STICK_LR:
-			std::cout << "Axis " << i << " value: " << GetAxisValue(RIGHT_STICK_LR) << std::endl;
+		case RIGHT_STICK_X:
+			std::cout << "Axis " << i << " value: " << GetAxisValue(RIGHT_STICK_X) << std::endl;			
 			break;
-		case GamepadAxis::RIGHT_STICK_UD:
-			std::cout << "Axis " << i << " value: " << GetAxisValue(RIGHT_STICK_UD) << std::endl;
+		case RIGHT_STICK_Y:
+			std::cout << "Axis " << i << " value: " << GetAxisValue(RIGHT_STICK_Y) << std::endl;			
 			break;
 		}
 	}	
-	/* Left, right axis movement */
-	//if(jae->axis == 0)
-	//{
-	//	std::cout << "Joystick value: " << jae->value << std::endl;
-	//}
-
-	///* Up, down axis movement */
-	//if(jae->axis == 1)
-	//{
-	//	std::cout << "Joystick value: " << jae->value << std::endl;
-	//}
 }
 
 int Gamepad::GetAxisValue(Sweet::GamepadAxis axis)
 {
 	return SDL_JoystickGetAxis(this->joystick, axis);
 }
+
+bool Gamepad::IsButtonDown(Uint8 button)
+{
+	std::map<SDLKey, Uint32>::iterator mapIterator;		
+
+	// check if key is in list of pressed keys
+	return (this->buttonsDown.find(button) != this->buttonsDown.end());
+}
+

@@ -76,6 +76,7 @@ int Engine::PollEvent(Sweet::Event *e)
 		OnSDLEvent(&sdl_e);				
 	}
 
+	/* keyboard events for moving sprite */
 	if(this->keyboard->IsKeyDown(SDLK_RIGHT))
 	{
 		//std::cout << "Moving sprite" << std::endl;
@@ -97,6 +98,52 @@ int Engine::PollEvent(Sweet::Event *e)
 		spriteY = this->sprite->Y();
 		this->sprite->Y(spriteY+1);
 	}
+
+	/* gamepad button events for moving sprite */
+	if(this->gamepad_1->IsButtonDown(0))
+	{		
+		spriteY = this->sprite->Y();
+		this->sprite->Y(spriteY+1);
+	}
+	if(this->gamepad_1->IsButtonDown(1))
+	{	
+		spriteX = this->sprite->X();
+		this->sprite->X(spriteX+1);
+	}
+	if(this->gamepad_1->IsButtonDown(2))
+	{
+		spriteX = this->sprite->X();
+		this->sprite->X(spriteX-1);
+	}
+	if(this->gamepad_1->IsButtonDown(3))
+	{
+		spriteY = this->sprite->Y();
+		this->sprite->Y(spriteY-1);
+	}
+
+	/* gamepad axis events for moving sprite */
+	int gamepadThreshold = 5000;
+	if(this->gamepad_1->GetAxisValue(LEFT_STICK_X) > gamepadThreshold)
+	{
+		spriteX = this->sprite->X();
+		this->sprite->X(spriteX+1);
+	}
+	if(this->gamepad_1->GetAxisValue(LEFT_STICK_X) < -gamepadThreshold)
+	{
+		spriteX = this->sprite->X();
+		this->sprite->X(spriteX-1);
+	}
+	if(this->gamepad_1->GetAxisValue(LEFT_STICK_Y) > gamepadThreshold)
+	{
+		spriteY = this->sprite->Y();
+		this->sprite->Y(spriteY+1);
+	}
+	if(this->gamepad_1->GetAxisValue(LEFT_STICK_Y) < -gamepadThreshold)
+	{
+		spriteY = this->sprite->Y();
+		this->sprite->Y(spriteY-1);
+	}
+	
 
 	return 0;
 }

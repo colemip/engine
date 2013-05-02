@@ -77,23 +77,23 @@ int Engine::PollEvent(Sweet::Event *e)
 	}
 
 	/* keyboard events for moving sprite */
-	if(this->keyboard->IsKeyDown(SDLK_RIGHT))
+	if(this->keyboard->IsKeyDown(SDLK_RIGHT) || this->keyboard->IsKeyDown(SDLK_d))
 	{
 		//std::cout << "Moving sprite" << std::endl;
 		spriteX = this->sprite->X();
 		this->sprite->X(spriteX+1);
 	}
-	if(this->keyboard->IsKeyDown(SDLK_LEFT))
+	if(this->keyboard->IsKeyDown(SDLK_LEFT) || this->keyboard->IsKeyDown(SDLK_a))
 	{
 		spriteX = this->sprite->X();
 		this->sprite->X(spriteX-1);
 	}
-	if(this->keyboard->IsKeyDown(SDLK_UP))
+	if(this->keyboard->IsKeyDown(SDLK_UP) || this->keyboard->IsKeyDown(SDLK_w))
 	{
 		spriteY = this->sprite->Y();
 		this->sprite->Y(spriteY-1);
 	}
-	if(this->keyboard->IsKeyDown(SDLK_DOWN))
+	if(this->keyboard->IsKeyDown(SDLK_DOWN) || this->keyboard->IsKeyDown(SDLK_s))
 	{
 		spriteY = this->sprite->Y();
 		this->sprite->Y(spriteY+1);

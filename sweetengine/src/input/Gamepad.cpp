@@ -5,12 +5,12 @@
 using namespace Sweet;
 
 Gamepad::Gamepad()
-{
+{	
 	/* set joystick as first one detected */
 	if(SDL_NumJoysticks() > 0)
 	{
 		this->joystick = SDL_JoystickOpen(0);
-		std::cout << "Gamepad Name: " << SDL_JoystickName(0) << std::endl;
+		std::cout << "Gamepad Name: " << SDL_JoystickName(0) << std::endl;		
 	}	
 }
 
@@ -47,13 +47,23 @@ void Gamepad::OnJoyAxisMotion(SDL_JoyAxisEvent *jae)
 
 	for(int i=0; i<numAxes; i++)
 	{
+		//std::cout << "Axis " << i << " value: " << GetAxisValue(i) << std::endl;			
 		switch(i)
 		{
 		case LEFT_STICK_X:
-			std::cout << "Axis " << i << " value: " << GetAxisValue(LEFT_STICK_X) << std::endl;			
+			std::cout << "Left Stick (X) value: " << GetAxisValue(LEFT_STICK_X) << std::endl;			
 			break;
 		case LEFT_STICK_Y:
-			std::cout << "Axis " << i << " value: " << GetAxisValue(LEFT_STICK_Y) << std::endl;			
+			std::cout << "Left Stick (Y) value: " << GetAxisValue(LEFT_STICK_Y) << std::endl;			
+			break;
+		case TRIGGERS:
+			std::cout << "Left Stick (Y) value: " << GetAxisValue(TRIGGERS) << std::endl;			
+			break;
+		case RIGHT_STICK_X:
+			std::cout << "Right Stick (X) value: " << GetAxisValue(RIGHT_STICK_X) << std::endl;			
+			break;
+		case RIGHT_STICK_Y:
+			std::cout << "Right Stick (Y) value: " << GetAxisValue(RIGHT_STICK_Y) << std::endl;			
 			break;
 		}
 	}	

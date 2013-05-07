@@ -60,6 +60,7 @@ void seSprite::Draw()
 	Init_GL();
 	LoadFromPNG("C:\\projects\\engine\\sweetengine\\art\\helloworld.png");
 	DrawImage(this->X(), this->Y());
+	DrawBoundingBox();
 }
 
 int seSprite::LoadFromPNG(const char *fileName)

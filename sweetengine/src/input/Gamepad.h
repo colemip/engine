@@ -1,7 +1,7 @@
 #ifndef SWEET_GAMEPAD_H
 #define SWEET_GAMEPAD_H
 
-#include <SDL.h>
+#include <SDL/SDL.h>
 #include <map>
 
 namespace Sweet

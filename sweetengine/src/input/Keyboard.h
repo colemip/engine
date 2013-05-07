@@ -1,7 +1,7 @@
 #ifndef SWEET_KEYBOARD_H
 #define SWEET_KEYBOARD_H
 
-#include <SDL.h>
+#include <SDL/SDL.h>
 #include <list>
 #include <map>
 

@@ -2,9 +2,9 @@
 #define SWEET_SESPRITE_H
 
 #include <iostream>
-#include "SDL.h"
-#include "SDL_image.h"
-#include "SDL_opengl.h"
+#include "SDL/SDL.h"
+#include "SDL/SDL_image.h"
+#include "SDL/SDL_opengl.h"
 #include "glut.h"
 #include "sePoint.h"
 #include "Collider.h"

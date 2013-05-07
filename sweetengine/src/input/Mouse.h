@@ -1,7 +1,7 @@
 #ifndef SWEET_MOUSE_H
 #define SWEET_MOUSE_H
 
-#include <SDL.h>
+#include <SDL/SDL.h>
 
 namespace Sweet 
 {

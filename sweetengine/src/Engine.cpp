@@ -2,6 +2,9 @@
 #include <list>
 #include <iterator>
 #include "Engine.h"
+//#include <gl\GL.h>
+//#include <gl\GLU.h>
+//#include <glut.h>
 
 using namespace Sweet;
 

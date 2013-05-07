@@ -1,7 +1,7 @@
 #ifndef SWEET_ENGINE_H
 #define SWEET_ENGINE_H
 
-#include <SDL.h>
+#include <SDL/SDL.h>
 #include <glut.h>
 #include "input\Keyboard.h"
 #include "input\Mouse.h"

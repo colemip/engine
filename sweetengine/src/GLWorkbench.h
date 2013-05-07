@@ -4,9 +4,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <glut.h>
-#include "SDL.h"
-#include "SDL_image.h"
-#include "SDL_opengl.h"
+#include "SDL/SDL.h"
+#include "SDL/SDL_image.h"
+#include "SDL/SDL_opengl.h"
 
 /*  Create checkerboard texture  */
 #define checkImageWidth 64

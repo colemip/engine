@@ -1,7 +1,7 @@
 #ifndef SWEET_EVENT_H
 #define SWEET_EVENT_H
 
-#include <SDL.h>
+#include <SDL/SDL.h>
 
 #define EVENT_SDL (EVENT_KEYDOWN | EVENT_KEYUP)
 

@@ -1,7 +1,7 @@
 #ifndef _CAPP_H_
     #define _CAPP_H_
  
-#include <SDL.h>
+#include <SDL/SDL.h>
 
 #include "CSurface.h"
 

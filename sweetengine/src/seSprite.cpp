@@ -58,9 +58,9 @@ void seSprite::Init_GL()
 void seSprite::Draw()
 {
 	Init_GL();
-	LoadFromPNG("C:\\projects\\engine\\sweetengine\\art\\helloworld.png");
+	LoadFromPNG("art/helloworld.png");
 	DrawImage(this->X(), this->Y());
-	DrawBoundingBox();
+	//DrawBoundingBox();
 }
 
 int seSprite::LoadFromPNG(const char *fileName)
@@ -142,7 +142,6 @@ void seSprite::DrawImage(seFloat x, seFloat y)
 
 	// Bind the texture to which subsequent calls refer to
 	glBindTexture(GL_TEXTURE_2D, texture);
-
 	glBegin(GL_QUADS);
 	// Top-left vertex
 	glTexCoord2i(0, 0);
@@ -157,7 +156,7 @@ void seSprite::DrawImage(seFloat x, seFloat y)
 	glTexCoord2i(0, 1);
 	glVertex3f(x, y+128, 0);
 
-	glEnd();
+	glEnd();	
 	glLoadIdentity();
 	SDL_GL_SwapBuffers();
 }

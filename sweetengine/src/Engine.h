@@ -3,10 +3,10 @@
 
 #include <SDL/SDL.h>
 #include <glut.h>
-#include "input\Keyboard.h"
-#include "input\Mouse.h"
-#include "input\Gamepad.h"
-#include "event\Event.h"
+#include "input/Keyboard.h"
+#include "input/Mouse.h"
+#include "input/Gamepad.h"
+#include "event/Event.h"
 #include "GLWorkbench.h"
 #include "Types.h"
 #include "seSprite.h"
@@ -40,7 +40,7 @@ namespace Sweet
 		void OnSDLEvent(SDL_Event *e);
 		int PollEvent(Sweet::Event *e);
 		/* OpenGL */
-		void InitOpenGL();		
+		void InitOpenGL();
 		//void RunGLWorkbench(int argc, char **argv);
 	};
 }

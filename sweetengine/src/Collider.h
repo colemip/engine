@@ -15,6 +15,7 @@ namespace Sweet
 		Collider(sePoint *_position);
 		~Collider();
 		void SetPosition(sePoint *_position);
+		virtual bool Collides(Collider *collider) = 0;
 	};
 }
 

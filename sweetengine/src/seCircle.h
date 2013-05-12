@@ -14,6 +14,8 @@ namespace Sweet
 	public:
 		seCircle();
 		~seCircle();
+		sePoint getCenter();
+		seFloat getRadius();
 	};
 }
 

@@ -16,3 +16,13 @@ bool Util::AABBRectIntersect(seRect *rect1, seRect *rect2)
 			rect1->getBottomRight().X() < rect2->getTopLeft().X() ||
 			rect1->getTopLeft().X() > rect2->getBottomRight().X() );			
 }
+
+bool Util::CircleIntersect(seCircle *circle1, seCircle *circle2)
+{
+	return ( Util::PointDistance( circle1->getCenter(), circle2->getCenter() ) <= ( circle1->getRadius() + circle2->getRadius() ) );
+}
+
+seFloat Util::PointDistance(sePoint p1, sePoint p2)
+{
+	return sqrt( pow((p1.X() - p2.X()), 2) + pow((p1.Y() - p2.Y()), 2) );
+}

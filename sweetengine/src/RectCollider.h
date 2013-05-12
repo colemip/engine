@@ -1,21 +1,19 @@
 #ifndef SWEET_RECTCOLLIDER_H
 #define SWEET_RECTCOLLIDER_
 
-#include "Types.h"
 #include "Collider.h"
 #include "sePoint.h"
+#include "Util.h"
 
 namespace Sweet
 {
-	class RectCollider : public Collider
+	class RectCollider : public seRect, public Collider
 	{
-	private:
-		seFloat width;
-		seFloat height;
 	public:
 		RectCollider();
-		RectCollider(sePoint *_position, seFloat _width, seFloat _height);
-		~RectCollider();
+		RectCollider(sePoint _topLeft, sePoint _bottomRight);
+		~RectCollider();		
+		bool Collides(RectCollider *collider);
 	};
 }
 

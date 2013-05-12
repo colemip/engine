@@ -7,7 +7,7 @@ namespace Sweet
 {
 	class seRect
 	{
-	private:
+	protected:
 		sePoint topLeft;
 		sePoint bottomRight;
 	public:
